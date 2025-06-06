@@ -1,0 +1,70 @@
+<div
+  class="modal modal--hidden"
+  id="artistModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="artistModalTitle"
+>
+  <div class="modal__overlay"></div>
+
+  <div class="modal__content">
+    <h2 id="artistModalTitle" class="modal__title visually-hidden">
+      Інформація про виконавця
+    </h2>
+
+    <button
+      type="button"
+      class="modal__close-button"
+      aria-label="Закрити вікно"
+    >
+      &times;
+    </button>
+
+    <section class="artist-card">
+      <div class="artist-card__header">
+        <img
+          src="path/to/artist-photo.jpg"
+          alt="Фото виконавця Unlike Pluto"
+          class="artist-card__photo"
+        />
+        <h1 class="artist-card__name">Unlike Pluto</h1>
+      </div>
+
+      <div class="artist-card__info">
+        <ul class="artist-card__info-list">
+          <li class="artist-card__info-item">
+            <span class="artist-card__label">Born:</span>
+            <span class="artist-card__value">2012-09-04</span>
+          </li>
+          <li class="artist-card__info-item">
+            <span class="artist-card__label">Died:</span>
+            <span class="artist-card__value"></span>
+          </li>
+          <li class="artist-card__info-item">
+            <span class="artist-card__label">Genre:</span>
+            <span class="artist-card__value"></span>
+          </li>
+          <li class="artist-card__info-item">
+            <span class="artist-card__label">Plays:</span>
+            <span class="artist-card__value">1</span>
+          </li>
+          <li class="artist-card__info-item">
+            <span class="artist-card__label">Country:</span>
+            <span class="artist-card__value">Unknown</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="artist-card__description-wrapper">
+        <h2 class="artist-card__description-title">Description:</h2>
+        <p class="artist-card__description">
+          After his death, Adagio's body was returned to Russia and was buried
+          in Moscow. In fact, Adagio is not only an artist but also a composer
+          for music for games. He graduated from the Moscow Music Academy of
+          Tchaikovsky Music. He worked in the Royal Palace with Prince Grigory
+          Volkonsky and Pyotr Tchaikovsky.
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
