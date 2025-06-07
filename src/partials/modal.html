@@ -1,3 +1,12 @@
+<!-- Кнопка для відкриття модалки -->
+<button
+  class="open-artist-modal btn-click"
+  data-artist-id="65ada54daf9f6d155db47e29"
+>
+  Відкрити U2
+</button>
+
+<!-- Модальне вікно -->
 <div
   class="modal modal--hidden"
   id="artistModal"
@@ -7,64 +16,51 @@
 >
   <div class="modal__overlay"></div>
 
-  <div class="modal__content">
-    <h2 id="artistModalTitle" class="modal__title visually-hidden">
-      Інформація про виконавця
-    </h2>
-
+  <div class="modal__content" role="document">
     <button
       type="button"
       class="modal__close-button"
       aria-label="Закрити вікно"
-    >
-      &times;
-    </button>
+    ></button>
 
     <section class="artist-card">
       <div class="artist-card__header">
+        <h2 id="artistModalTitle" class="artist-card__name">Unlike Pluto</h2>
         <img
-          src="path/to/artist-photo.jpg"
-          alt="Фото виконавця Unlike Pluto"
+          src=""
+          alt=""
           class="artist-card__photo"
+          width="280"
+          height="280"
         />
-        <h1 class="artist-card__name">Unlike Pluto</h1>
       </div>
 
-      <div class="artist-card__info">
-        <ul class="artist-card__info-list">
-          <li class="artist-card__info-item">
-            <span class="artist-card__label">Born:</span>
-            <span class="artist-card__value">2012-09-04</span>
-          </li>
-          <li class="artist-card__info-item">
-            <span class="artist-card__label">Died:</span>
-            <span class="artist-card__value"></span>
-          </li>
-          <li class="artist-card__info-item">
-            <span class="artist-card__label">Genre:</span>
-            <span class="artist-card__value"></span>
-          </li>
-          <li class="artist-card__info-item">
-            <span class="artist-card__label">Plays:</span>
-            <span class="artist-card__value">1</span>
-          </li>
-          <li class="artist-card__info-item">
-            <span class="artist-card__label">Country:</span>
-            <span class="artist-card__value">Unknown</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="artist-card__description-wrapper">
-        <h2 class="artist-card__description-title">Description:</h2>
-        <p class="artist-card__description">
-          After his death, Adagio's body was returned to Russia and was buried
-          in Moscow. In fact, Adagio is not only an artist but also a composer
-          for music for games. He graduated from the Moscow Music Academy of
-          Tchaikovsky Music. He worked in the Royal Palace with Prince Grigory
-          Volkonsky and Pyotr Tchaikovsky.
-        </p>
-      </div>
+      <ul class="artist-card__info-list">
+        <li class="artist-card__info-years-active">
+          <h4 class="artist-card__label">Years active:</h4>
+          <p class="artist-card__value years-active"></p>
+        </li>
+        <li class="artist-card__info-sex">
+          <h4 class="artist-card__label">Sex:</h4>
+          <span class="artist-card__value sex"></span>
+        </li>
+        <li class="artist-card__info-members">
+          <h4 class="artist-card__label">Members:</h4>
+          <span class="artist-card__value members"></span>
+        </li>
+        <li class="artist-card__info-country">
+          <h4 class="artist-card__label">Country:</h4>
+          <span class="artist-card__value country"></span>
+        </li>
+        <li class="artist-card__info-description">
+          <h3 class="artist-card__description-title">Description:</h3>
+          <p class="artist-card__description description"></p>
+        </li>
+        <li class="artist-card__info-genres">
+          <h4 class="artist-card__label-genres visually-hidden"></h4>
+          <div class="artist-card__genres-list genres-list"></div>
+        </li>
+      </ul>
     </section>
   </div>
 </div>

@@ -1,0 +1,132 @@
+h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 52px 16px;
+}
+
+.modal--hidden {
+  display: none;
+}
+
+.modal__overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.artist-card__name {
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -0.01em;
+}
+
+.artist-card__photo {
+  margin-bottom: 32px;
+}
+
+.modal__content {
+  position: relative;
+  display: flex;
+  background-color: #060307;
+  padding: 52px 8px;
+  max-width: 288px;
+  border-radius: 16px;
+}
+.modal__close-button {
+  display: flex;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+  justify-content: center;
+}
+
+.modal__close-button::before,
+.modal__close-button::after {
+  display: flex;
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.modal__close-button::after {
+  transform: rotate(135deg);
+}
+
+.modal__close-button:hover {
+  transform: scale(125%);
+}
+
+.artist-card__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.artist-card__info-yearsActive {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-card__value,
+.artist-card__description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.artist-card__info-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 16px;
+}
+
+.artist-card__info-genres-item {
+  display: flex;
+  padding: 6px 12px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.9em;
+  white-space: nowrap; /* Запобігає розриву тексту тега */
+  width: fit-content;
+  cursor: default;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/*  btn-click  */
+
+.btn-click {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: fit-content;
+}
