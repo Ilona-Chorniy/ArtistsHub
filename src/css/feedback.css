@@ -1,61 +1,126 @@
-.swiper {
-  max-width: 100%;
+/* Глобальне box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Wrapper секції */
+.feedback {
+  width: 288px;
   height: 253px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0 64px;
 }
 
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-/* Забрати стандартні стрілки Swiper */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  display: none;
+/* Контейнер */
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 
-/* Додати свої іконки замість них */
-.swiper-button-prev::before,
-.swiper-button-next::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-image: url('/icons/arrow.svg'); /* або своя іконка */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+/* Swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-/* Додаткове оформлення кнопок */
-.swiper-button-prev,
-.swiper-button-next {
-  border: 1px solid var(--opacity-white-50);
-  border-radius: 8px;
-  width: 48px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 10;
-}
-
-/* Стилі для крапок */
-.swiper-pagination-bullet {
-  background-color: var(--color-scheme-1-text); /* твій кастомний колір */
-  opacity: 1;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 0 6px;
-}
-
-/* Активна крапка */
-.swiper-pagination-bullet-active {
-  background-color: var(--your-accent-color, #000);
-}
-
+/* Слайди */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  height: 100%;
+  background-color: #1e1e1e; /* темно-сірий фон слайдів */
+}
+
+/* Забороняємо стандартні стрілки */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+}
+
+/* Додаємо свої іконки */
+.swiper-button-prev::before,
+.swiper-button-next::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   color: white;
+}
+
+/* Крапки */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #ffffff !important; /* заміна var(--color-scheme-1-text) */
+  opacity: 0.5;
+  margin: 0 6px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff !important; /* активна крапка */
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .feedback {
+    width: 704px;
+    height: 297px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: 1px solid rgba(255, 255, 255, 0.5); /* заміна var(--opacity-white-50) */
+    border-radius: 8px;
+    padding: 12px;
+    width: 48px !important;
+    height: 48px !important;
+    background: #2c2c2c; /* заміна var(--color-scheme-1-foreground) */
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow {
+    height: 14px;
+    width: 14px;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .feedback {
+    width: 1312px;
+    height: 397px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: 1px solid rgba(255, 255, 255, 0.5); /* заміна var(--opacity-white-50) */
+    border-radius: 8px;
+    padding: 12px;
+    width: 48px !important;
+    height: 48px !important;
+    background: #2c2c2c; /* заміна var(--color-scheme-1-foreground) */
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow {
+    height: 14px;
+    width: 15px;
+  }
 }
