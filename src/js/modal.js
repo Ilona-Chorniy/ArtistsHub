@@ -1,11 +1,14 @@
 // src/js/modal.js
-import domRefs from './artistModal/domRefs'; // Переконайтеся, що шлях правильний
-import { closeModal, initCloseModalListeners } from './artistModal/closeModal'; // Імпортуємо функції закриття
+import domRefs from './artistModal/domRefs';
+import { closeModal, initCloseModalListeners } from './artistModal/closeModal';
+import axios from 'axios';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Деструктуризуємо об'єкт domRefs для зручного доступу до посилань
+let genresMap = new Map();
+let allArtists = []; // збережемо всі артисти для доступу до жанрів
+
+document.addEventListener('DOMContentLoaded', async () => {
   const {
-    modal, // Залишаємо modal, оскільки він використовується в openModal
+    modal,
     openModalBtn,
     name,
     thumb,
@@ -17,32 +20,56 @@ document.addEventListener('DOMContentLoaded', () => {
     genresList,
   } = domRefs;
 
-  // Функція для відкриття модалки та завантаження даних
+  // --- Завантаження жанрів ---
+  async function fetchGenres() {
+    try {
+      const { data } = await axios.get(
+        'https://sound-wave.b.goit.study/api/genres'
+      );
+      data.forEach(item => {
+        let genreName = '';
+        if (typeof item === 'string') genreName = item;
+        else if (item && typeof item.genre === 'string') genreName = item.genre;
+        if (genreName) genresMap.set(genreName.toLowerCase(), genreName);
+      });
+    } catch (error) {
+      console.error('Помилка при завантаженні жанрів:', error);
+    }
+  }
+
+  // --- Завантаження всіх артистів ---
+  async function fetchAllArtists() {
+    try {
+      const { data } = await axios.get(
+        'https://sound-wave.b.goit.study/api/artists'
+      );
+      allArtists = data.artists;
+    } catch (error) {
+      console.error('Помилка при завантаженні артистів:', error);
+    }
+  }
+
+  await Promise.all([fetchGenres(), fetchAllArtists()]);
+
   async function openModal(artistId) {
     try {
       modal.classList.remove('modal--hidden');
 
-      const response = await fetch(
+      const { data } = await axios.get(
         `https://sound-wave.b.goit.study/api/artists/${artistId}`
       );
-      if (!response.ok) {
-        throw new Error('Помилка при завантаженні даних артиста');
-      }
-
-      const data = await response.json();
-      console.log('Отримані дані:', data);
 
       if (!data || !data.strArtist) {
         throw new Error('Дані артиста не знайдено');
       }
 
-      // Заповнюємо поля модалки, використовуючи domRefs
       name.textContent = data.strArtist || 'Без імені';
-      thumb.src = data.strArtistThumb || 'path/to/default-photo.jpg'; // Замініть на реальний шлях
+      thumb.src =
+        data.strArtistThumb ||
+        'https://via.placeholder.com/280x280?text=No+Photo';
       thumb.alt = `Фото виконавця ${data.strArtist || ''}`;
       bio.textContent = data.strBiographyEN || 'Опис відсутній';
 
-      // Заповнення додаткових полів
       yearsActive.textContent = data.intFormedYear
         ? `${data.intFormedYear} - ${data.intDiedYear || 'теперішній час'}`
         : 'Н/Д';
@@ -50,18 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
       members.textContent = data.intMembers || 'Н/Д';
       country.textContent = data.strCountry || 'Н/Д';
 
-      // Очищаємо жанри та додаємо нові
+      // --- ЖАНРИ ---
       genresList.innerHTML = '';
-      if (Array.isArray(data.genres) && data.genres.length > 0) {
-        data.genres.forEach(genre => {
+      const fullArtistData = allArtists.find(artist => artist._id === artistId);
+      const genres = fullArtistData?.genres || [];
+
+      if (genres.length > 0) {
+        genres.forEach(genreKey => {
+          const displayGenre =
+            genresMap.get(genreKey.toLowerCase()) || genreKey;
           const genreEl = document.createElement('span');
-          genreEl.classList.add('artist-card__info-genres-item');
-          genreEl.textContent = genre;
+          genreEl.classList.add('artist-card__genres-item');
+          genreEl.textContent = displayGenre;
           genresList.appendChild(genreEl);
         });
       } else {
         const noGenresEl = document.createElement('span');
-        noGenresEl.classList.add('artist-card__info-genres-item');
+        noGenresEl.classList.add('artist-card__genres-item');
         noGenresEl.textContent = 'Жанри відсутні';
         genresList.appendChild(noGenresEl);
       }
@@ -72,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Обробники подій
   openModalBtn.addEventListener('click', () => {
     const artistId = openModalBtn.dataset.artistId;
     if (artistId) {
@@ -83,6 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Ініціалізуємо обробники подій закриття модалки
   initCloseModalListeners();
 });

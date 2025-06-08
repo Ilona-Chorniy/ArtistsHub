@@ -97,7 +97,7 @@ h4 {
   line-height: 150%;
 }
 
-.artist-card__info-genres {
+.genres-list {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -108,9 +108,9 @@ h4 {
   margin-bottom: 16px;
 }
 
-.artist-card__info-genres-item {
+.artist-card__genres-item {
   display: flex;
-  padding: 6px 12px;
+  padding: 4px 10px;
   background-color: transparent;
   color: #fff;
   border-radius: 6px;
