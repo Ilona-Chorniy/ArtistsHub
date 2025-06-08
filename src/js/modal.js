@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       members.textContent = data.intMembers || 'No data available';
       country.textContent = data.strCountry || 'No data available';
 
-      // --- ЖАНРИ ---
+      // --- Genres ---
       genresList.innerHTML = '';
       const fullArtistData = allArtists.find(artist => artist._id === artistId);
       const genres = fullArtistData?.genres || [];

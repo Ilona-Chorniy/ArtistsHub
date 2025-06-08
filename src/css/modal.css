@@ -97,6 +97,11 @@ h4 {
   line-height: 150%;
 }
 
+.description {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
 .genres-list {
   display: flex;
   flex-wrap: wrap;
@@ -128,4 +133,89 @@ h4 {
   gap: 20px;
   justify-content: center;
   width: fit-content;
+}
+
+/* Для всього скролбару */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Трек (фон скролбару) */
+::-webkit-scrollbar-track {
+  background: #060307; /* Колір фону треку */
+  border-radius: 8px; /* Закруглені кути треку */
+}
+
+/* Повзунок (рухома частина скролбару) */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); /* Колір повзунка */
+  border-radius: 10px; /* Закруглені кути повзунка */
+}
+
+/* Повзунок при наведенні курсору */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Колір повзунка при наведенні */
+}
+
+/*   Artist albums   */
+
+.albums {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.albums__card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #1e1c1f;
+  border-radius: 16px;
+  padding: 12px;
+}
+/* .albums__card-item {
+}
+.albums__name-list {
+}
+.albums__name-item {
+}
+.albums-name {
+} */
+
+.albums__name-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.albums__track-option ul:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.albums__track-option ul:nth-child(n + 2) {
+  padding: 12px;
+}
+
+.albums__track-list,
+.albums__track-list-option {
+  display: flex;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 150%;
+}
+.albums__track-item,
+.albums__track-name {
+  flex: 2;
+}
+.albums__time-item,
+.albums__trak-time {
+  flex: 1;
+}
+
+.albums__trak-link,
+.albums__trak-time,
+.albums__track-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
 }
