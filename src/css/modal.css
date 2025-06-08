@@ -101,7 +101,6 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  justify-content: space-between;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;

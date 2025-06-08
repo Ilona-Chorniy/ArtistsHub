@@ -4,7 +4,7 @@ import { closeModal, initCloseModalListeners } from './artistModal/closeModal';
 import axios from 'axios';
 
 let genresMap = new Map();
-let allArtists = []; // збережемо всі артисти для доступу до жанрів
+let allArtists = []; // We will save all artists for access to genres
 
 document.addEventListener('DOMContentLoaded', async () => {
   const {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     genresList,
   } = domRefs;
 
-  // --- Завантаження жанрів ---
+  // --- Loading genres ---
   async function fetchGenres() {
     try {
       const { data } = await axios.get(
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (genreName) genresMap.set(genreName.toLowerCase(), genreName);
       });
     } catch (error) {
-      console.error('Помилка при завантаженні жанрів:', error);
+      console.error('Error loading genres:', error);
     }
   }
 
-  // --- Завантаження всіх артистів ---
+  // --- Loading all artists ---
   async function fetchAllArtists() {
     try {
       const { data } = await axios.get(
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       );
       allArtists = data.artists;
     } catch (error) {
-      console.error('Помилка при завантаженні артистів:', error);
+      console.error('Error loading artists:', error);
     }
   }
 
@@ -60,22 +60,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       );
 
       if (!data || !data.strArtist) {
-        throw new Error('Дані артиста не знайдено');
+        throw new Error('Artist data not found');
       }
 
-      name.textContent = data.strArtist || 'Без імені';
+      name.textContent = data.strArtist || 'No name';
       thumb.src =
         data.strArtistThumb ||
         'https://via.placeholder.com/280x280?text=No+Photo';
-      thumb.alt = `Фото виконавця ${data.strArtist || ''}`;
-      bio.textContent = data.strBiographyEN || 'Опис відсутній';
+      thumb.alt = `Artisns photo ${data.strArtist || ''}`;
+      bio.textContent = data.strBiographyEN || 'Description not available';
 
       yearsActive.textContent = data.intFormedYear
-        ? `${data.intFormedYear} - ${data.intDiedYear || 'теперішній час'}`
-        : 'Н/Д';
-      gender.textContent = data.strGender || 'Н/Д';
-      members.textContent = data.intMembers || 'Н/Д';
-      country.textContent = data.strCountry || 'Н/Д';
+        ? `${data.intFormedYear} - ${data.intDiedYear || ' present'}`
+        : 'No data available';
+      gender.textContent = data.strGender || 'No data available';
+      members.textContent = data.intMembers || 'No data available';
+      country.textContent = data.strCountry || 'No data available';
 
       // --- ЖАНРИ ---
       genresList.innerHTML = '';
@@ -94,12 +94,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       } else {
         const noGenresEl = document.createElement('span');
         noGenresEl.classList.add('artist-card__genres-item');
-        noGenresEl.textContent = 'Жанри відсутні';
+        noGenresEl.textContent = 'Genres not available';
         genresList.appendChild(noGenresEl);
       }
     } catch (error) {
       console.error(error);
-      alert('Не вдалося завантажити дані артиста.');
+      alert('Failed to load artist data');
       closeModal();
     }
   }
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (artistId) {
       openModal(artistId);
     } else {
-      console.error('Artist ID не знайдено на кнопці.');
-      alert('Не вдалося визначити ID артиста.');
+      console.error('Artist ID not found on the button');
+      alert('Failed to determine the artist ID');
     }
   });
 
