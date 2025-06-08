@@ -1,1 +1,37 @@
+.about-us {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
 
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-content img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
