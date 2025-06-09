@@ -1,0 +1,163 @@
+.footer {
+  background-color: #060307;
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #a472ec;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex: 1;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%);
+}
+
+.footer-bottom {
+  border-top: 1px solid #2e2c2e;
+
+  padding-top: 32px;
+
+  font-size: 14px;
+  color: #ccc;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: row;
+}
+
+/*  Мобільне меню */
+@media (max-width: 767px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 64px;
+  }
+
+  .social-icons {
+    order: -1;
+    padding-bottom: 32px;
+  }
+
+  .footer-bottom p {
+    order: 0;
+  }
+  .logo {
+    padding-bottom: 32px;
+  }
+
+  .facebook {
+    width: 33px;
+    height: 33px;
+  }
+  .instagram {
+    width: 30px;
+    height: 30px;
+  }
+  .youtobe {
+    width: 33px;
+    height: 23px;
+  }
+}
+
+/* Планшет і більше */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .facebook {
+    width: 26px;
+    height: 26px;
+  }
+  .instagram {
+    width: 24px;
+    height: 24px;
+  }
+  .youtobe {
+    width: 26px;
+    height: 18px;
+  }
+
+  .footer-nav {
+    order: 1;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .logo {
+    order: 0;
+    padding-bottom: 32px;
+  }
+  .footer-container {
+    padding-bottom: 80px;
+  }
+}
+
+/* Десктоп */
+@media (min-width: 1440px) {
+  .footer-container {
+    max-width: 1400px;
+  }
+}
