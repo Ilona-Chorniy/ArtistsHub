@@ -8,7 +8,8 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 52px 16px;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 .modal--hidden {
@@ -34,9 +35,13 @@ h4 {
   letter-spacing: -0.01em;
 }
 
-.artist-thumb {
+.artist-card__header {
   margin-bottom: 32px;
+}
+
+.artist-thumb {
   border-radius: 16px;
+  min-width: 100%;
 }
 
 .modal__content {
@@ -47,6 +52,7 @@ h4 {
   max-width: 288px;
   border-radius: 16px;
 }
+
 .modal__close-button {
   display: flex;
   justify-content: center;
@@ -243,4 +249,54 @@ h4 {
 
 .albums__trak-link {
   min-width: 24px;
+}
+
+/* Styles for Tablet devices */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .modal__content {
+    max-width: 702px;
+    padding: 64px 24px;
+  }
+
+  .artist-name {
+    font-size: 32px;
+  }
+
+  .albums__card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .artist-card__info-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+  }
+
+  /* 5-й і 6-й — на всю ширину */
+  .artist-card__info-list > li:nth-child(n + 5) {
+    grid-column: 1 / -1;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .albums__card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .albums {
+    margin-bottom: 48px;
+  }
+
+  .albums__name-item {
+    width: calc((100% - 32px) / 2);
+  }
 }
