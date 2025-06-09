@@ -55,9 +55,13 @@ export function renderAlbums(tracksList, artistName) {
       if (track.movie) {
         const a = document.createElement('a');
         a.href = track.movie;
-        a.textContent = 'Listen';
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
+        a.innerHTML = `
+    <svg width="16" height="16">
+    <use href="icons.svg#icon-youtube"></use>
+  </svg>
+  `;
         link.appendChild(a);
       }
 

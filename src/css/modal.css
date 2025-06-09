@@ -23,7 +23,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .artist-name {
@@ -111,6 +111,7 @@ h4 {
 .artist-bio {
   max-height: 280px;
   overflow-y: auto;
+  padding-right: 4px;
 }
 
 .genres-list {
@@ -252,7 +253,7 @@ h4 {
 }
 
 /* Styles for Tablet devices */
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) {
   .modal__content {
     max-width: 702px;
     padding: 64px 24px;
@@ -286,17 +287,63 @@ h4 {
     width: fit-content;
   }
 
+  .artist-bio {
+    padding-right: 8px;
+  }
+
+  .albums {
+    margin-bottom: 16px;
+  }
+
+  .albums__name-item {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+/* Styles for Tablet devices */
+@media screen and (min-width: 1440px) {
+  .modal__content {
+    max-width: 1312px;
+    padding: 64px 64px;
+  }
+
+  .artist-name {
+    margin-bottom: 48px;
+  }
+
+  .artist-container {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .artist-card__header {
+    margin-bottom: 20px;
+  }
+
+  .albums__card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .artist-card__info-list {
+    flex: 1;
+  }
+
+  .artist-card__genres-list {
+    margin-bottom: 0;
+  }
+
   .albums__card-list {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
   }
 
-  .albums {
-    margin-bottom: 48px;
-  }
-
   .albums__name-item {
-    width: calc((100% - 32px) / 2);
+    width: calc((100% - 96px) / 4);
   }
 }
