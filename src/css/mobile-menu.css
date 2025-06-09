@@ -28,10 +28,20 @@
         line-height: 150%;
         gap:39px
     }
+    .modal-container{
+    display: none;
+    }
+    .modal-container.active {
+        display: block;
+    }
 
     
     }
     
     
-  
+        @media (min-width: 768px) {
+            .modal-container{
+                display: none;
+            }
+        }
     
