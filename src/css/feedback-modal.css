@@ -9,6 +9,9 @@
 
 .modal-feedback-close {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 16px;
   right: 16px;
   width: 32px;
@@ -16,6 +19,11 @@
   background-color: transparent;
   border: none;
   color: #fff;
+}
+
+.modal-close-icon {
+  width: 14px;
+  height: 14px;
 }
 
 .modal-feedback-heading {
@@ -71,6 +79,7 @@
   cursor: pointer;
   width: 30px;
   height: 30px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 label:hover .modal-feedback-stars {
@@ -78,6 +87,14 @@ label:hover .modal-feedback-stars {
 }
 
 .star-radio:checked + label .modal-feedback-stars {
+  color: #764191;
+}
+
+.modal-feedback-stars.filled {
+  color: #764191;
+}
+
+.modal-feedback-stars.hovered {
   color: #764191;
 }
 
