@@ -6,7 +6,7 @@ import './js/artists.js';
 
 import './js/about.js';
 
-import './js/feedback.js';
+import {} from './js/feedback.js';
 
 import './js/modal';
 

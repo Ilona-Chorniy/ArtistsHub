@@ -1,6 +1,8 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
+import axios from 'axios';
+
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: true,
@@ -16,9 +18,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 //===================================================================//
-import axios from 'axios';
-
-export async function GetFeedbacksResponse(query, page) {
+export async function GetFeedbacksResponse(query, page = 1) {
   const baseURL = 'https://sound-wave.b.goit.study/api/';
   const endPoint = '/feedbacks';
   const url = baseURL + endPoint;
@@ -28,9 +28,10 @@ export async function GetFeedbacksResponse(query, page) {
     page: page,
     limit: 3,
   };
-  const headers = {};
 
-  const res = await axios.get(url, { params, headers });
+  const res = await axios.get(url, { params });
 
   return res.data;
 }
+
+//===================================================================//
