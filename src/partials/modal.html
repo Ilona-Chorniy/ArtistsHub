@@ -8,7 +8,7 @@
 
 <!-- Window of modal -->
 <div
-  class="modal modal--hidden"
+  class="modal modal--hidden open-artist-modal"
   id="artistModal"
   role="dialog"
   aria-modal="true"
@@ -26,11 +26,11 @@
 
     <section class="artist-card">
       <div class="artist-card__header">
-        <h2 id="artistModalTitle" class="artist-card__name"></h2>
+        <h2 id="artistModalTitle" class="artist-name"></h2>
         <img
           src=""
           alt="Artist photo"
-          class="artist-card__photo"
+          class="artist-thumb"
           width="280"
           height="280"
         />
@@ -39,27 +39,27 @@
       <ul class="artist-card__info-list">
         <li class="artist-card__info-years-active">
           <h4 class="artist-card__label">Years active:</h4>
-          <p class="artist-card__value years-active"></p>
+          <p class="artist-card__value artist-years"></p>
         </li>
         <li class="artist-card__info-sex">
           <h4 class="artist-card__label">Sex:</h4>
-          <span class="artist-card__value sex"></span>
+          <span class="artist-card__value artist-gender"></span>
         </li>
         <li class="artist-card__info-members">
           <h4 class="artist-card__label">Members:</h4>
-          <span class="artist-card__value members"></span>
+          <span class="artist-card__value artist-members"></span>
         </li>
         <li class="artist-card__info-country">
           <h4 class="artist-card__label">Country:</h4>
-          <span class="artist-card__value country"></span>
+          <span class="artist-card__value artist-country"></span>
         </li>
         <li class="artist-card__info-description">
-          <h3 class="artist-card__description-title">Description:</h3>
-          <p class="artist-card__description description"></p>
+          <h4 class="artist-card__description-title">Biography:</h4>
+          <p class="artist-card__description artist-bio"></p>
         </li>
         <li class="artist-card__info-genres">
           <h4 class="artist-card__label-genres visually-hidden"></h4>
-          <div class="artist-card__genres-list genres-list"></div>
+          <div class="artist-card__genres-list artist-genres"></div>
         </li>
       </ul>
 
@@ -70,3 +70,4 @@
     </section>
   </div>
 </div>
+<script type="module" src="../js/artistModal/test/test-launch.js"></script>

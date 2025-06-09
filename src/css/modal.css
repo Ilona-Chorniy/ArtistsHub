@@ -25,7 +25,7 @@ h4 {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.artist-card__name {
+.artist-name {
   text-align: center;
   margin-bottom: 16px;
   font-weight: 700;
@@ -34,7 +34,7 @@ h4 {
   letter-spacing: -0.01em;
 }
 
-.artist-card__photo {
+.artist-thumb {
   margin-bottom: 32px;
   border-radius: 16px;
 }
@@ -49,6 +49,7 @@ h4 {
 }
 .modal__close-button {
   display: flex;
+  justify-content: center;
   position: absolute;
   top: 16px;
   right: 16px;
@@ -58,7 +59,6 @@ h4 {
   border: none;
   transition: all 0.3s ease-in-out;
   padding: 0;
-  justify-content: center;
 }
 
 .modal__close-button::before,
@@ -98,7 +98,11 @@ h4 {
   line-height: 150%;
 }
 
-.description {
+.artist-card__description-title {
+  padding-bottom: 4px;
+}
+
+.artist-bio {
   max-height: 280px;
   overflow-y: auto;
 }
@@ -110,6 +114,18 @@ h4 {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
+  margin-bottom: 16px;
+}
+
+.artist-card__info-genres {
+  display: flex;
+  gap: 16px;
+}
+
+.artist-card__genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-bottom: 16px;
 }
 
@@ -183,7 +199,6 @@ h4 {
 
 .albums__name-title {
   font-size: 16px;
-  margin-bottom: 12px;
 }
 
 .albums__track-option ul:nth-child(odd) {
