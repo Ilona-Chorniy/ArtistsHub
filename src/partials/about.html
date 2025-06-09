@@ -2,13 +2,49 @@
   <div class="container">
     <h2 class="section-title">About ArtistsHub</h2>
     <p class="section-description">
-      At ArtistsHub, our mission is to connect music lovers with the artists they adore.
-      We strive to create a vibrant community where discovering new music is as enjoyable as listening to it.
+      At ArtistsHub, our mission is to connect music lovers with the artists
+      they adore. We strive to create a vibrant community where discovering new
+      music is as enjoyable as listening to it.
     </p>
+
     <div class="about-content">
-      <img src="src/public/img/team.png" alt="ArtistsHub Team" class="team-image" />
-      <svg class="logo-image" width="80" height="80"> 
-       <use href="./src/public/img/icons.svg#icon-logo" alt="ArtistsHub Logo"> </use>
+      <picture class="team-image">
+        <source
+          srcset="
+            ./src/img/about/mob-about.png    1x,
+            ./src/img/about/mob-about@2x.png 2x
+          "
+          media="(max-width: 767px)"
+        />
+        <source
+          srcset="
+            ./src/img/about/tablet-about.png    1x,
+            ./src/img/about/tablet-about@2x.png 2x
+          "
+          media="(min-width: 768px) and (max-width: 1279px)"
+        />
+        <source
+          srcset="
+            ./src/img/about/desk-about.png    1x,
+            ./src/img/about/desk-about@2x.png 2x
+          "
+          media="(min-width: 1280px)"
+        />
+        <img
+          src="./src/img/about/desk-about.png"
+          alt="ArtistsHub Team"
+          loading="lazy"
+        />
+      </picture>
+
+      <svg
+        class="logo-image"
+        width="80"
+        height="80"
+        aria-label="ArtistsHub Logo"
+      >
+        <use href="./src/img/about/icons.svg#icon-logo"></use>
+      </svg>
     </div>
   </div>
 </section>
