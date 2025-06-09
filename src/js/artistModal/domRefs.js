@@ -22,8 +22,7 @@ const domRefs = {
   genresContainer: document.querySelector('.artist-card__info-genres'),
   genresList: document.querySelector('.artist-card__genres-list'),
 
-  //albumsContainer: document.querySelector('.artist-card__albums-container'),
-  //albumsList: document.querySelector('.artist-card__albums-list'),
+  albumsContainer: document.querySelector('.albums-container'),
 };
 
 export default domRefs;
