@@ -58,9 +58,9 @@ export function renderAlbums(tracksList, artistName) {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         a.innerHTML = `
-    <svg width="16" height="16">
-    <use href="icons.svg#icon-youtube"></use>
-  </svg>
+        <svg width="16" height="16">
+          <use href="icons.svg#icon-youtube"></use>
+        </svg>
   `;
         link.appendChild(a);
       }
