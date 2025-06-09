@@ -19,12 +19,18 @@ export function handleClickStar(event) {
 
 export function handleFormSubmit(e) {
   e.preventDefault();
+
   const currentForm = e.currentTarget;
   const userData = {
     name: currentForm.elements.modalFeedbackName.value.trim(),
     message: currentForm.elements.modalFeedbackMessage.value.trim(),
     rating: currentForm.elements.star.value,
   };
+
+  if (!userData.name || !userData.message || !userData.rating) {
+    alert('Fill all fields');
+    return;
+  }
 
   console.log(userData);
 
@@ -46,18 +52,19 @@ export function handleStarMouseOut() {
   stars.forEach(star => star.classList.remove('hovered'));
 }
 
-export function openFeedbackModal() {
-  form.addEventListener('submit', handleFormSubmit);
-  closeBtn.addEventListener('click', closeModal);
+export function openFeedbackModal() {}
+document.body.style.overflow = 'hidden';
+form.addEventListener('submit', handleFormSubmit);
+closeBtn.addEventListener('click', closeModal);
 
-  stars.forEach(star => {
-    star.addEventListener('click', handleClickStar);
-    star.addEventListener('mouseover', handleStarHover);
-    star.addEventListener('mouseout', handleStarMouseOut);
-  });
-}
+stars.forEach(star => {
+  star.addEventListener('click', handleClickStar);
+  star.addEventListener('mouseover', handleStarHover);
+  star.addEventListener('mouseout', handleStarMouseOut);
+});
 
 export function closeModal() {
+  document.body.style.overflow = '';
   modal.classList.add('visually-hidden');
 
   form.removeEventListener('submit', handleFormSubmit);

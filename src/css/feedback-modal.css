@@ -2,8 +2,10 @@
   position: relative;
   border-radius: 16px;
   padding: 64px 16px;
-  width: 320px;
+  min-width: 320px;
+  max-width: 704px;
   height: 100vh;
+  margin: 0 auto;
   background-color: #060307;
 }
 
@@ -116,4 +118,69 @@ label:hover .modal-feedback-stars {
   font-size: 18px;
   line-height: 150%;
   color: #fff;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-feedback-submit:active {
+  background-color: #603177;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal-feedback-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 704px;
+    padding: 64px 32px;
+    height: 688px;
+  }
+
+  .modal-feedback-heading {
+    font-size: 44px;
+    line-height: 120%;
+    margin-bottom: 48px;
+  }
+
+  .modal-input-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .modal-feedback-input {
+    width: 100%;
+  }
+
+  .message-input {
+    height: 180px;
+  }
+
+  .modal-feedback-submit {
+    margin: 0 auto;
+    margin-top: 24px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .modal-feedback-wrapper {
+    width: 864px;
+    padding: 64px;
+  }
+
+  .modal-feedback-heading {
+    font-size: 60px;
+  }
+
+  /* .modal-feedback-input {
+    width: 736px;
+  } */
+
+  .modal-feedback-submit {
+    width: 108px;
+  }
+
+  .modal-feedback-submit:hover,
+  .modal-feedback-submit:focus {
+    background-color: #603177;
+  }
 }
