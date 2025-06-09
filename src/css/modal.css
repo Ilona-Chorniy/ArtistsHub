@@ -10,6 +10,7 @@ h4 {
   justify-content: center;
   padding-top: 52px;
   padding-bottom: 52px;
+  z-index: 1000;
 }
 
 .modal--hidden {
@@ -24,6 +25,11 @@ h4 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.85);
+}
+
+.no-scroll {
+  overflow: hidden;
+  min-height: 100%;
 }
 
 .artist-name {
@@ -51,6 +57,8 @@ h4 {
   padding: 52px 8px;
   max-width: 288px;
   border-radius: 16px;
+  overflow: scroll;
+  max-height: 90vh;
 }
 
 .modal__close-button {
@@ -231,7 +239,7 @@ h4 {
 }
 
 .albums__track-name {
-  max-width: 140px;
+  /* max-width: 140px; */
   padding-right: 8px;
 }
 
@@ -249,6 +257,9 @@ h4 {
 }
 
 .albums__trak-link {
+  display: flex;
+  justify-content: end;
+  align-items: center;
   min-width: 24px;
 }
 

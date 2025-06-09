@@ -12,6 +12,7 @@ export async function openModal(artistId) {
   try {
     // Показати модалку
     domRefs.modal.classList.remove('modal--hidden');
+    document.body.classList.add('no-scroll');
 
     // Отримати дані артиста
     const artistData = await fetchArtistData(artistId);
@@ -23,8 +24,7 @@ export async function openModal(artistId) {
     renderArtistInfo(artistData);
     renderAlbums(artistData.tracksList, artistData.strArtist);
 
-    // Витягуємо жанри з artistData (припустимо, там поле strGenres — рядок "Pop, Rock")
-    console.log('🎯 artistData:', artistData);
+    // Витягуємо жанри з artistData
     const genres = artistData.genres || [];
     console.log('🧪 genres container:', domRefs.artist.genres);
     renderGenres(domRefs.artist.genres, genres);
