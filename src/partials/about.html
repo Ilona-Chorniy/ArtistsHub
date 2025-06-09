@@ -1,34 +1,27 @@
 <section class="about-us" id="about">
   <div class="container">
-    <h2 class="section-title">About ArtistsHub</h2>
-    <p class="section-description">
-      At ArtistsHub, our mission is to connect music lovers with the artists
-      they adore. We strive to create a vibrant community where discovering new
-      music is as enjoyable as listening to it.
-    </p>
-
     <div class="about-content">
       <picture class="team-image">
         <source
           srcset="
-            /src/img/about/mob-about.png    1x,
-            /src/img/about/mob-about@2x.png 2x
+            /src/img/about/desk-about.png    1x,
+            /src/img/about/desk-about@2x.png 2x
           "
-          media="(max-width: 767px)"
+          media="(min-width: 1440px)"
         />
         <source
           srcset="
             /src/img/about/tablet-about.png    1x,
             /src/img/about/tablet-about@2x.png 2x
           "
-          media="(min-width: 768px) and (max-width: 1279px)"
+          media="(min-width: 768px) and (max-width: 1439px)"
         />
         <source
           srcset="
-            /src/img/about/desk-about.png    1x,
-            /src/img/about/desk-about@2x.png 2x
+            /src/img/about/mob-about.png    1x,
+            /src/img/about/mob-about@2x.png 2x
           "
-          media="(min-width: 1280px)"
+          media="(max-width: 767px)"
         />
         <img
           src="/src/img/about/desk-about.png"
@@ -46,5 +39,11 @@
         <use href="/src/img/about/icons.svg#icon-logo"></use>
       </svg>
     </div>
+    <h2 class="section-title">About ArtistsHub</h2>
+    <p class="section-description">
+      At ArtistsHub, our mission is to connect music lovers with the artists
+      they adore. We strive to create a vibrant community where discovering new
+      music is as enjoyable as listening to it.
+    </p>
   </div>
 </section>
