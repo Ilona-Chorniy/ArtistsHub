@@ -1,3 +1,10 @@
+/* Base styles for the application */
+html,
+body {
+  overflow-x: hidden; /* Запобігає горизонтальному скролу, якщо він не потрібен */
+  scrollbar-gutter: stable;
+}
+
 html {
   scroll-behavior: smooth;
 }
