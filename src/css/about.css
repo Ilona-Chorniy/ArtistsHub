@@ -1,62 +1,96 @@
-.section-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  line-height: 1.2;
-}
-
-.section-description {
-  max-width: 640px;
-  margin: 0 auto 48px;
-  font-size: 1.125rem;
-  color: #444;
-  line-height: 1.6;
+.about-us {
+  padding: 64px 0;
+  background-color: #000;
+  color: #fff;
 }
 
 .about-content {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
+  margin-bottom: 48px;
 }
 
-.team-image img {
+.team-image {
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
+  max-width: 280px;
+  height: 168px;
+  margin-bottom: 0;
 }
 
 .logo-image {
-  width: 100px;
-  height: auto;
-  fill: #222;
+  width: 80px;
+  height: 80px;
+  fill: #fff;
+  margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
+.section-title {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .section-description {
+    font-size: 20px;
+  }
+
+  .team-image {
+    max-width: 704px;
+    height: auto;
+  }
+
+  .logo-image {
+    margin-bottom: 24px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
   .about-content {
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    gap: 48px;
+    gap: 32px;
+    margin-bottom: 64px;
   }
 
-  .team-image,
-  .logo-image {
-    flex: 0 1 45%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .about-content {
-    gap: 64px;
-  }
-
-  .team-image img {
-    max-width: 500px;
+  .team-image {
+    max-width: 640px;
+    height: auto;
+    margin-bottom: 0;
   }
 
   .logo-image {
     width: 120px;
+    height: 120px;
+  }
+
+  .section-title {
+    font-size: 60px;
+    margin-bottom: 24px;
+  }
+
+  .section-description {
+    font-size: 20px;
   }
 }
