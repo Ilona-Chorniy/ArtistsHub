@@ -38,11 +38,11 @@ export async function openModal(artistId) {
     console.error('Помилка завантаження артиста:', error.message, error);
     alert('Artist data not found');
     closeModal();
+  } finally {
+    // Hide the loader
+    loader.hideArtistLoader();
   }
 }
-
-// Hide the loader
-loader.hideArtistLoader();
 
 function clearModalContent() {
   // Clear all content in the modal

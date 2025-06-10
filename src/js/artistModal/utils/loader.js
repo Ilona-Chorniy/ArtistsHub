@@ -8,7 +8,6 @@ function showArtistLoader() {
   }
   domRefs.artistDataLoader.classList.remove('loader-hidden');
   domRefs.artistDataLoader.classList.add('loader-visible');
-  domRefs.artistCardSection.innerHTML = '';
   domRefs.artistCardSection.classList.add('hidden');
 }
 
