@@ -1,0 +1,73 @@
+<!-- Кнопка для відкриття модалки -->
+<button
+  class="open-artist-modal btn-click"
+  data-artist-id="65ada69eaf9f6d155db48612"
+>
+  Learn more
+</button>
+
+<!-- Window of modal -->
+<div
+  class="modal modal--hidden open-artist-modal"
+  id="artistModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="artistModalTitle"
+>
+  <div class="modal__overlay"></div>
+
+  <div class="modal__content" role="document">
+    <button
+      type="button"
+      class="modal__close-button"
+      aria-label="Close the window"
+      title="Close the window"
+    ></button>
+
+    <!-- Loader -->
+    <div id="artistDataLoader" class="loader-hidden">
+      <div class="spinner"></div>
+    </div>
+
+    <section class="artist-card">
+      <h2 id="artistModalTitle" class="artist-name"></h2>
+      <div class="artist-container">
+        <div class="artist-card__header">
+          <img src="" alt="Artist photo" class="artist-thumb" />
+        </div>
+        <ul class="artist-card__info-list">
+          <li class="info-item artist-card__info-years-active">
+            <h4 class="artist-card__label">Years active:</h4>
+            <p class="artist-card__value artist-years"></p>
+          </li>
+          <li class="info-item artist-card__info-sex">
+            <h4 class="artist-card__label">Sex:</h4>
+            <span class="artist-card__value artist-gender"></span>
+          </li>
+          <li class="info-item artist-card__info-members">
+            <h4 class="artist-card__label">Members:</h4>
+            <span class="artist-card__value artist-members"></span>
+          </li>
+          <li class="info-item artist-card__info-country">
+            <h4 class="artist-card__label">Country:</h4>
+            <span class="artist-card__value artist-country"></span>
+          </li>
+          <li class="artist-card__info-description">
+            <h4 class="artist-card__description-title">Biography:</h4>
+            <p class="artist-card__description artist-bio"></p>
+          </li>
+          <li class="artist-card__info-genres">
+            <h4 class="artist-card__label-genres visually-hidden"></h4>
+            <div class="artist-card__genres-list artist-genres"></div>
+          </li>
+        </ul>
+      </div>
+
+      <!--  Artist Albums  -->
+
+      <h2 class="albums">Albums</h2>
+      <div class="albums-container"></div>
+    </section>
+  </div>
+</div>
+<script type="module" src="../js/artistModal/test/test-launch.js"></script>
