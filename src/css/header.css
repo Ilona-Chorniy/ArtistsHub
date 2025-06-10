@@ -1,0 +1,124 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #060307;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6.5px 0;
+}
+
+.logo {
+  display: block;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo-mobile {
+  display: block;
+  fill: #ffffff;
+}
+
+.logo-desktop {
+  display: none;
+  fill: #ffffff;
+}
+
+.nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 32px;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #764191;
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger-icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.burger:hover .burger-icon {
+  fill: #764191;
+}
+
+
+@media screen and (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+  
+  .burger {
+    display: none;
+  }
+  
+  .header-inner {
+    padding: 20px 0;
+  }
+  
+  .logo-mobile {
+    display: none;
+  }
+  
+  .logo-desktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  
+  .header-inner {
+    padding: 10.5px 0;
+  }
+  
+  .logo svg {
+    width: 119px;
+    height: 51px;
+  }
+}
