@@ -3,47 +3,47 @@
     <div class="about-content">
       <picture class="team-image">
         <source
-          srcset="
-            /src/img/about/desk-about.png    1x,
-            /src/img/about/desk-about@2x.png 2x
-          "
           media="(min-width: 1440px)"
+          srcset="
+            /img/about/about/desk-about.png    1x,
+            /img/about/about/desk-about@2x.png 2x
+          "
         />
         <source
-          srcset="
-            /src/img/about/tablet-about.png    1x,
-            /src/img/about/tablet-about@2x.png 2x
-          "
           media="(min-width: 768px) and (max-width: 1439px)"
+          srcset="
+            /img/about/about/tablet-about.png    1x,
+            /img/about/about/tablet-about@2x.png 2x
+          "
         />
         <source
-          srcset="
-            /src/img/about/mob-about.png    1x,
-            /src/img/about/mob-about@2x.png 2x
-          "
           media="(max-width: 767px)"
+          srcset="
+            /img/about/about/mob-about.png    1x,
+            /img/about/about/mob-about@2x.png 2x
+          "
         />
         <img
-          src="/src/img/about/desk-about.png"
+          class="about-image"
+          src="/images/about/about/desk-about.png"
           alt="ArtistsHub Team"
           loading="lazy"
+          width="704"
+          height="413"
+          style="width: 100%; height: auto"
         />
       </picture>
-
-      <svg
-        class="logo-image"
-        width="80"
-        height="80"
-        aria-label="ArtistsHub Logo"
-      >
-        <use href="/src/img/about/icons.svg#icon-logo"></use>
-      </svg>
     </div>
-    <h2 class="section-title">About ArtistsHub</h2>
-    <p class="section-description">
-      At ArtistsHub, our mission is to connect music lovers with the artists
-      they adore. We strive to create a vibrant community where discovering new
-      music is as enjoyable as listening to it.
-    </p>
+    <div class="about-text-container">
+      <svg class="about-icon">
+        <use href="/img/icons.svg#icon-logo"></use>
+      </svg>
+      <h2 class="section-title">About ArtistsHub</h2>
+      <p class="section-description">
+        At ArtistsHub, our mission is to connect music lovers with the artists
+        they adore. We strive to create a vibrant community where discovering
+        new music is as enjoyable as listening to it.
+      </p>
+    </div>
   </div>
 </section>
