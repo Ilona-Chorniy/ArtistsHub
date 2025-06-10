@@ -13,12 +13,10 @@ axios.defaults.baseURL = 'https://sound-wave.b.goit.study/api/';
 
 async function loadFeedbacks() {
   try {
-    // 1) Замість деструктуризації { data }...
     const response = await axios.get(
       'https://sound-wave.b.goit.study/api/feedbacks',
       { params: { limit: 3, page: 1 } }
     );
-    // 2) ...беремо масив відгуків із response.data.data
     const feedbacks = Array.isArray(response.data)
       ? response.data
       : response.data.data;
