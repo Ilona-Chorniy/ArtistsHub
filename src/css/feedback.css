@@ -66,25 +66,6 @@
   color: #764191;
 }
 
-/* === Stars === */
-.rating-stars {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-bottom: 16px;
-}
-
-.rating-stars svg {
-  width: 20px;
-  height: 19px;
-  fill: white;
-  transition: fill 0.3s ease;
-}
-
-.rating-stars svg.filled {
-  fill: #764191;
-}
-
 /* === Swiper Arrows === */
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -172,5 +153,58 @@
 
   .arrow {
     height: 15px !important;
+  }
+}
+
+/* === Rating via pure CSS === */
+.rating {
+  --star-size: 20px;
+  font-size: var(--star-size);
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  color: #ccc; /* колір пустих зірок */
+  user-select: none;
+}
+
+/* Малюємо 5 зірок одночасно */
+.rating::before {
+  content: '★★★★★';
+}
+
+/* Накладка з заповненими зірками */
+.rating::after {
+  content: '★★★★★';
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #764191; /* колір заповнених зірок */
+}
+
+/* Зміна ширини накладки залежно від рейтингу */
+.rating.value-0::after {
+  width: 0%;
+}
+.rating.value-1::after {
+  width: 20%;
+}
+.rating.value-2::after {
+  width: 40%;
+}
+.rating.value-3::after {
+  width: 60%;
+}
+.rating.value-4::after {
+  width: 80%;
+}
+.rating.value-5::after {
+  width: 100%;
+}
+
+/* Збільшені зірки на планшетах+ */
+@media screen and (min-width: 768px) {
+  .rating {
+    --star-size: 24px;
   }
 }

@@ -1,20 +1,11 @@
-<section class="feedback">
+<section class="feedback-section" id="reviews">
+  <div class="rating value-${r}"></div>
   <div class="container">
-    <div class="swiper">
-      <ul class="swiper-wrapper" id="feedback-list"></ul>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev">
-        <svg class="arrow" width="14" height="14">
-          <use href="../img/feedback/feedback-arrows.svg#icon-left-arrow"></use>
-        </svg>
-      </div>
-      <div class="swiper-button-next">
-        <svg class="arrow" width="14" height="14">
-          <use
-            href="../img/feedback/feedback-arrows.svg#icon-right-arrow"
-          ></use>
-        </svg>
-      </div>
+    <div class="swiper feedback-swiper">
+      <ul class="swiper-wrapper" id="feedback-container"></ul>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination custom-pagination"></div>
     </div>
   </div>
 </section>

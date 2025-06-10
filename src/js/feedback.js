@@ -9,33 +9,39 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (slides.length >= 3) initSwiper();
 });
 
+axios.defaults.baseURL = 'https://sound-wave.b.goit.study/api/';
+
 async function loadFeedbacks() {
   try {
-    const { data } = await axios.get(
-      'https://sound-wave.b.goit.study/api/feedbacks'
+    // 1) Замість деструктуризації { data }...
+    const response = await axios.get(
+      'https://sound-wave.b.goit.study/api/feedbacks',
+      { params: { limit: 3, page: 1 } }
     );
+    // 2) ...беремо масив відгуків із response.data.data
+    const feedbacks = Array.isArray(response.data)
+      ? response.data
+      : response.data.data;
 
-    console.log(data);
+    console.log('Отримано відгуків:', feedbacks);
 
-    if (!Array.isArray(data) || data.length === 0) {
+    if (!Array.isArray(feedbacks) || feedbacks.length === 0) {
       console.warn('Список відгуків порожній.');
       return [];
     }
-    const selected = [
-      data[0],
-      data[Math.floor(data.length / 2)],
-      data[data.length - 1],
-    ];
-    renderFeedbacks(selected);
-    return selected;
+
+    renderFeedbacks(feedbacks);
+    return feedbacks;
   } catch (err) {
     console.error('Помилка при завантаженні відгуків:', err);
+    document.getElementById('feedback-container').innerHTML =
+      '<li class="swiper-slide"><p>Відгуки недоступні.</p></li>';
     return [];
   }
 }
 
 function renderFeedbacks(feedbacks) {
-  const wrapper = document.getElementById('feedback-list');
+  const wrapper = document.getElementById('feedback-container');
   wrapper.innerHTML = '';
 
   feedbacks.forEach(item => {
@@ -45,33 +51,26 @@ function renderFeedbacks(feedbacks) {
       `
       <li class="swiper-slide">
         <div class="feedback-card">
-          <div
-            class="star-rating"
-            data-rating="${r}"
-            data-max-rating="5"
-            data-read-only="true"
-            aria-label="Rating: ${r} out of 5"
-          ></div>
+          <div class="rating value-${r}" aria-label="Rating: ${r} з 5"></div>
           <p class="feedback-text">${item.descr}</p>
           <p class="feedback-author">${item.name}</p>
         </div>
-      </li>
-    `
+      </li>`
     );
   });
-
-  document
-    .querySelectorAll('.star-rating')
-    .forEach(el => new window.StarRating(el));
 }
 
 function initSwiper() {
-  new Swiper('.swiper', {
+  new Swiper('.feedback-swiper', {
     loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
+    pagination: {
+      el: '.custom-pagination',
+      clickable: true,
+      renderBullet: (i, cls) => `<span class="${cls}"></span>`,
+    },
     navigation: {
-      nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
     },
   });
 }
