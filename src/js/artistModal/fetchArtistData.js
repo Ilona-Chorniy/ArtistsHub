@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 export async function fetchArtistData(artistId) {
+  if (!artistId) {
+    throw new Error('Artist ID is required');
+  }
   const [artistRes, allArtistsRes] = await Promise.all([
     axios.get(`https://sound-wave.b.goit.study/api/artists/${artistId}`),
     axios.get(`https://sound-wave.b.goit.study/api/artists`),

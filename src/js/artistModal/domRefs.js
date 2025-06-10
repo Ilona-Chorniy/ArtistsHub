@@ -1,5 +1,9 @@
 export const domRefs = {
   modal: document.querySelector('.modal'),
+  // link to loader and spinner
+  artistDataLoader: document.getElementById('artistDataLoader'),
+  artistDataSpinner: document.querySelector('#artistDataLoader .spinner'),
+
   artist: {
     name: document.querySelector('.artist-name'),
     thumb: document.querySelector('.artist-thumb'),
@@ -13,4 +17,5 @@ export const domRefs = {
   albums: {
     container: document.querySelector('.albums-container'),
   },
+  artistCardSection: document.querySelector('.artist-card'),
 };

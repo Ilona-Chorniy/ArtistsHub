@@ -1,3 +1,4 @@
+//modal.js
 import { domRefs } from './artistModal/domRefs.js';
 import {
   closeModal,
@@ -7,24 +8,29 @@ import { fetchArtistData } from './artistModal/fetchArtistData.js';
 import { renderArtistInfo } from './artistModal/renderArtistInfo.js';
 import { renderAlbums } from './artistModal/renderAlbums.js';
 import { renderGenres } from './artistModal/renderGenres.js';
+import loader from './artistModal/utils/loader.js';
 
+// Function to open the modal and fetch artist data
 export async function openModal(artistId) {
+  //  Show the loader
+  loader.showArtistLoader();
+
   try {
-    // Показати модалку
+    // Show the modal
     domRefs.modal.classList.remove('modal--hidden');
     document.body.classList.add('no-scroll');
 
-    // Отримати дані артиста
+    // Get artist data
     const artistData = await fetchArtistData(artistId);
 
-    // Очистити старий контент (опціонально)
+    // Clear old content
     clearModalContent();
 
-    // Рендер даних
+    // Render artist data
     renderArtistInfo(artistData);
     renderAlbums(artistData.tracksList, artistData.strArtist);
 
-    // Витягуємо жанри з artistData
+    // Render artist info
     const genres = artistData.genres || [];
     console.log('🧪 genres container:', domRefs.artist.genres);
     renderGenres(domRefs.artist.genres, genres);
@@ -35,11 +41,16 @@ export async function openModal(artistId) {
   }
 }
 
+// Hide the loader
+loader.hideArtistLoader();
+
 function clearModalContent() {
-  // Якщо є області, які треба чистити перед рендером — додаємо сюди
+  // Clear all content in the modal
+
   if (domRefs.albumsContainer) domRefs.albumsContainer.innerHTML = '';
   if (domRefs.genres) domRefs.genres.innerHTML = '';
   if (domRefs.artistInfoContainer) domRefs.artistInfoContainer.innerHTML = '';
 }
 
+// Initialize close modal listeners
 initCloseModalListeners();
