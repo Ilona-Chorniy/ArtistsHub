@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+        <symbol id="icon-play-btn" viewBox="0 0 23 32">
+            <path d="M.817 31.064a1.533 1.533 0 0 0 1.575-.097l19.809-13.714A1.517 1.517 0 0 0 22.857 16a1.527 1.527 0 0 0-.656-1.253L2.392 1.033A1.516 1.516 0 0 0 .816.934a1.522 1.522 0 0 0-.815 1.352v27.429a1.524 1.524 0 0 0 .817 1.35zM3.048 5.195 18.656 16 3.048 26.805V5.194z"/>
+        </symbol>
+    </defs>
+</svg>
