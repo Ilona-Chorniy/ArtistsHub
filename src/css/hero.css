@@ -1,5 +1,6 @@
 /* MOBILE */
 .hero-section {
+  padding: 64px 16px 0 16px;
   background: linear-gradient(180deg, #060307 0%, #23132b 100%);
 }
 
@@ -10,15 +11,14 @@
 
 .hero-img {
   height: 385px;
-  margin: 0 auto;
-  background-image: url(../img/hero/mob-hero-min.png);
+  background-image: url(/img/hero/mob-hero-min.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
 @media (min-resolution: 192dpi), (min-resolution: 2x) {
   .hero-img {
-    background-image: url(../img/hero/mob-hero@2x-min.png);
+    background-image: url(/img/hero/mob-hero@2x-min.png);
   }
 }
 
@@ -30,7 +30,6 @@
   letter-spacing: -0.01em;
   color: #fff;
 
-  margin-top: 64px;
   margin-bottom: 20px;
 }
 
@@ -86,22 +85,30 @@
 
 /* TABLET */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  .hero-section {
+    padding: 32px 32px 0 32px;
+  }
+  .hero-container {
+    padding: 0;
+  }
+  .text-cont {
+    width: 624px;
+  }
+
   .hero-img {
     width: 704px;
     height: 632px;
 
-    background-image: url(../img/hero/tab-hero-min.png);
+    background-image: url(/img/hero/tab-hero-min.png);
   }
   @media (min-resolution: 192dpi), (min-resolution: 2x) {
     .hero-img {
-      background-image: url(../img/hero/tab-hero@2x-min.png);
+      background-image: url(/img/hero/tab-hero@2x-min.png);
     }
   }
 
   .hero-title {
     width: 648px;
-    margin-top: 32px;
-    margin-bottom: 24px;
   }
 
   .hero-subtitle {
@@ -118,35 +125,35 @@
 /* DESK */
 @media screen and (min-width: 1440px) {
   .hero-section {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    padding: 0 64px;
   }
 
   .hero-container {
-    padding: 216px 32px 216px 64px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
   }
-
+  .text-cont {
+    width: 640px;
+    margin-right: 32px;
+    padding: 216px 0;
+  }
   .hero-img {
-    min-width: 641px;
-    min-height: 900px;
-    margin-right: 64px;
-    background-image: url(../img/hero/desk-hero-min.png);
+    width: 641px;
+    height: 900px;
+    background-image: url(/img/hero/desk-hero-min.png);
   }
   @media (min-resolution: 192dpi), (min-resolution: 2x) {
     .hero-img {
-      background-image: url(../img/hero/desk-hero@2x-min.png);
+      background-image: url(/img/hero/desk-hero@2x-min.png);
     }
   }
   .hero-title {
     margin-top: 0;
     font-size: 84px;
-    min-width: 640px;
   }
 
   .hero-subtitle {
-    min-width: 640px;
-    max-width: 864px;
   }
 
   .hero-btn {
