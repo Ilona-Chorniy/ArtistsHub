@@ -3,6 +3,7 @@
   color: #fff;
   padding: 40px 20px 20px;
   text-align: center;
+  padding-bottom: 80px;
 }
 
 .footer-container {
@@ -78,6 +79,10 @@
     gap: 10px;
   }
 
+  .footer {
+    padding-bottom: 48px 0 64px 0;
+  }
+
   .footer-nav ul {
     flex-direction: column;
     gap: 32px;
@@ -88,7 +93,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-bottom: 64px;
   }
 
   .social-icons {
@@ -102,14 +106,13 @@
   .logo {
     margin-bottom: 32px;
   }
-
-  .social-icons a[href*='facebook'] svg {
-    width: 33px;
-    height: 33px;
-  }
   .social-icons a[href*='instagram'] svg {
     width: 30px;
     height: 30px;
+  }
+  .social-icons a[href*='facebook'] svg {
+    width: 33px;
+    height: 33px;
   }
   .social-icons a[href*='youtube'] svg {
     width: 33px;
@@ -127,14 +130,13 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 80px;
   }
 
-  /* Для десктопної версії: */
   .footer-nav {
     order: 1;
     flex: none;
-    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 80px;
   }
 
   .footer-nav ul {
@@ -152,14 +154,13 @@
     order: 2;
     margin-top: 20px;
   }
-
-  .social-icons a[href*='facebook'] svg {
-    width: 26px;
-    height: 26px;
-  }
   .social-icons a[href*='instagram'] svg {
     width: 24px;
     height: 24px;
+  }
+  .social-icons a[href*='facebook'] svg {
+    width: 26px;
+    height: 26px;
   }
   .social-icons a[href*='youtube'] svg {
     width: 26px;
@@ -171,5 +172,20 @@
 @media (min-width: 1440px) {
   .footer-container {
     max-width: 1400px;
+  }
+  .footer {
+    padding-bottom: 80px;
+  }
+  .social-icons a[href*='instagram'] svg {
+    width: 18px;
+    height: 18px;
+  }
+  .social-icons a[href*='facebook'] svg {
+    width: 20px;
+    height: 20px;
+  }
+  .social-icons a[href*='youtube'] svg {
+    width: 20px;
+    height: 14px;
   }
 }
