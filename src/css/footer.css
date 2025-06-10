@@ -22,20 +22,24 @@
   font-size: 20px;
 }
 
-.footer-nav {
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
   display: flex;
   gap: 30px;
   justify-content: center;
-  flex: 1;
 }
 
-.footer-nav a {
+.footer-nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  white-space: nowrap;
 }
 
-.footer-nav a:hover {
+.footer-nav ul li a:hover {
   text-decoration: underline;
 }
 
@@ -54,12 +58,9 @@
 
 .footer-bottom {
   border-top: 1px solid #2e2c2e;
-
   padding-top: 32px;
-
   font-size: 14px;
   color: #ccc;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,7 +69,7 @@
   flex-direction: row;
 }
 
-/*  Мобільне меню */
+/* Mobile */
 @media (max-width: 767px) {
   .footer-container {
     flex-direction: column;
@@ -77,10 +78,10 @@
     gap: 10px;
   }
 
-  .footer-nav {
-    display: flex;
+  .footer-nav ul {
     flex-direction: column;
     gap: 32px;
+    margin-bottom: 48px;
   }
 
   .footer-bottom {
@@ -99,24 +100,24 @@
     order: 0;
   }
   .logo {
-    padding-bottom: 32px;
+    margin-bottom: 32px;
   }
 
-  .facebook {
+  .social-icons a[href*='facebook'] svg {
     width: 33px;
     height: 33px;
   }
-  .instagram {
+  .social-icons a[href*='instagram'] svg {
     width: 30px;
     height: 30px;
   }
-  .youtobe {
+  .social-icons a[href*='youtube'] svg {
     width: 33px;
     height: 23px;
   }
 }
 
-/* Планшет і більше */
+/* Tablet and Desktop */
 @media (min-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -126,36 +127,48 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  .facebook {
-    width: 26px;
-    height: 26px;
-  }
-  .instagram {
-    width: 24px;
-    height: 24px;
-  }
-  .youtobe {
-    width: 26px;
-    height: 18px;
+    padding-bottom: 80px;
   }
 
+  /* Для десктопної версії: */
   .footer-nav {
     order: 1;
-    flex: 1;
+    flex: none;
+    margin-top: 30px;
+  }
+
+  .footer-nav ul {
+    flex-direction: row;
+    gap: 30px;
     justify-content: center;
   }
 
   .logo {
     order: 0;
-    padding-bottom: 32px;
+    margin-bottom: 0;
   }
-  .footer-container {
-    padding-bottom: 80px;
+
+  .social-icons {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  /* Розміри SVG */
+  .social-icons a[href*='facebook'] svg {
+    width: 26px;
+    height: 26px;
+  }
+  .social-icons a[href*='instagram'] svg {
+    width: 24px;
+    height: 24px;
+  }
+  .social-icons a[href*='youtube'] svg {
+    width: 26px;
+    height: 18px;
   }
 }
 
-/* Десктоп */
+/* Full screen */
 @media (min-width: 1440px) {
   .footer-container {
     max-width: 1400px;
