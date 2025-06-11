@@ -1,0 +1,363 @@
+@import './utils/loader.css';
+
+h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 52px;
+  padding-bottom: 52px;
+  background-color: rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.modal--hidden {
+  display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed; /* Зафіксувати позицію */
+  width: 100%; /* На всю ширину */
+  height: 100%; /* На всю висоту */
+  top: 0;
+  left: 0;
+}
+
+.artist-name {
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -0.01em;
+}
+
+.artist-card__header {
+  margin-bottom: 32px;
+}
+
+.artist-thumb {
+  border-radius: 16px;
+  min-width: 100%;
+}
+
+.modal__content {
+  position: relative;
+  display: flex;
+  /* background-color: #060307; */
+  padding: 52px 8px;
+  max-width: 288px;
+  border-radius: 16px;
+  overflow: scroll;
+  max-height: 90vh;
+  z-index: 1001;
+}
+
+.modal__close-button {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+}
+
+.modal__close-button::before,
+.modal__close-button::after {
+  display: flex;
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.modal__close-button::after {
+  transform: rotate(135deg);
+}
+
+.modal__close-button:hover {
+  transform: scale(125%);
+}
+
+.artist-card__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.artist-card__info-yearsActive {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-card__value,
+.artist-card__description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.artist-card__description-title {
+  padding-bottom: 4px;
+}
+
+.artist-bio {
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 16px;
+}
+
+.artist-card__info-genres {
+  display: flex;
+  gap: 16px;
+}
+
+.artist-card__genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.artist-card__genres-item {
+  display: flex;
+  padding: 4px 10px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.9em;
+  white-space: nowrap; /* Запобігає розриву тексту тега */
+  width: fit-content;
+  cursor: default;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/*  btn-click  */
+
+.btn-click {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: fit-content;
+}
+
+/* Для всього скролбару */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Трек (фон скролбару) */
+::-webkit-scrollbar-track {
+  background: #060307; /* Колір фону треку */
+  border-radius: 8px; /* Закруглені кути треку */
+}
+
+/* Повзунок (рухома частина скролбару) */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); /* Колір повзунка */
+  border-radius: 10px; /* Закруглені кути повзунка */
+}
+
+/* Повзунок при наведенні курсору */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Колір повзунка при наведенні */
+}
+
+/*   Artist albums   */
+
+.albums {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.albums__card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.albums-name {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #1e1c1f;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.albums__name-title {
+  font-size: 16px;
+}
+
+.albums__track-option ul:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.albums__track-option ul:nth-child(n + 2) {
+  padding: 12px;
+}
+
+.albums__track-list,
+.albums__track-list-option {
+  display: flex;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 150%;
+}
+.albums__track-item,
+.albums__track-name {
+  flex: 2;
+}
+
+.albums__track-name {
+  /* max-width: 140px; */
+  padding-right: 8px;
+}
+
+.albums__time-item,
+.albums__trak-time {
+  flex: 1;
+}
+
+.albums__trak-link,
+.albums__trak-time,
+.albums__track-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.albums__trak-link {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  min-width: 24px;
+}
+
+/* Styles for Tablet devices */
+@media screen and (min-width: 768px) {
+  .modal__content {
+    max-width: 702px;
+    padding: 64px 24px;
+  }
+
+  .artist-name {
+    font-size: 32px;
+  }
+
+  .albums__card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .artist-card__info-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+  }
+
+  /* 5-й і 6-й — на всю ширину */
+  .artist-card__info-list > li:nth-child(n + 5) {
+    grid-column: 1 / -1;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .artist-bio {
+    padding-right: 8px;
+  }
+
+  .albums {
+    margin-bottom: 16px;
+  }
+
+  .albums__name-item {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+/* Styles for Tablet devices */
+@media screen and (min-width: 1440px) {
+  .modal__content {
+    max-width: 1312px;
+    padding: 64px 64px;
+  }
+
+  .artist-name {
+    margin-bottom: 48px;
+  }
+
+  .artist-container {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .artist-card__header {
+    margin-bottom: 20px;
+  }
+
+  .albums__card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .artist-card__info-list {
+    flex: 1;
+  }
+
+  .artist-card__genres-list {
+    margin-bottom: 0;
+  }
+
+  .albums__card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .albums__name-item {
+    width: calc((100% - 96px) / 4);
+  }
+}

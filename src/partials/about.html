@@ -1,0 +1,39 @@
+<section class="about-us" id="about">
+    <div class="container about-us-container">
+        <div class="about-us-img-container">
+            <picture class="about-us-pictures">
+                <source
+                    srcset="/img/about/desk-about.png 1x, /img/about/desk-about@2x.png 2x"
+                    media="(min-width: 1440px)"
+                />
+                <source
+                    srcset="/img/about/tablet-about.png 1x, /img/about/tablet-about@2x.png 2x"
+                    media="(min-width: 768px)"
+                />
+                <source
+                    srcset="/img/about/mob-about.png 1x, /img/about/mob-about@2x.png 2x"
+                    media="(max-width: 767px)"
+                />
+                <img
+                    class="about-us-image"
+                    src="/img/about/desk-about.png"
+                    alt="ArtistsHub Team"
+                    loading="lazy"
+                />
+            </picture>
+        </div>
+        <div class="about-us-content">
+            <svg class="logo-image" width="64" height="64" aria-label="ArtistsHub Logo">
+                <use href="/img/about/icons.svg#icon-logo"></use>
+            </svg>
+            <div class="about-us-descrp">
+                <h2 class="about-section-title">About ArtistsHub</h2>
+                <p class="about-section-description">
+                    At ArtistsHub, our mission is to connect music lovers with the artists they
+                    adore. We strive to create a vibrant community where discovering new music is as
+                    enjoyable as listening to it.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
