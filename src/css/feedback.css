@@ -1,16 +1,23 @@
-/* === Reset & Box Model === */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+:root {
+  --font-family: 'IBM Plex Sans', sans-serif;
+  --second-family: 'Epilogue', sans-serif;
+}
+
 /* === Feedback Section Container === */
-.feedback {
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 704px;
-  height: 253px;
+  min-height: 253px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 64px 16px;
   overflow: hidden;
 }
 
@@ -21,11 +28,14 @@
   background-color: #060307;
 }
 
-/* === Swiper Core === */
 .swiper {
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+.swiper-wrapper {
+  margin-bottom: 16px;
 }
 
 .swiper-wrapper {
@@ -38,13 +48,10 @@
   align-items: center;
   height: 100%;
   text-align: center;
-  margin-bottom: 26px;
 }
 
-/* === Feedback Card === */
 .feedback-card {
   background-color: #060307;
-
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 608px;
@@ -52,24 +59,76 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 16px;
 }
 
-.feedback-text {
-  font-size: 16px;
+/* Stars-rating */
+.rating {
+  --star-size: 20px;
+  font-size: var(--star-size);
+  line-height: 1;
+  display: inline-block;
+  position: relative;
   color: #fbfbfb;
-  margin-bottom: 12px;
+  user-select: none;
+}
+
+.rating::before {
+  content: '★★★★★';
+}
+
+.rating::after {
+  content: '★★★★★';
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #764191;
+}
+
+.rating.value-0::after {
+  width: 0%;
+}
+.rating.value-1::after {
+  width: 20%;
+}
+.rating.value-2::after {
+  width: 40%;
+}
+.rating.value-3::after {
+  width: 60%;
+}
+.rating.value-4::after {
+  width: 80%;
+}
+.rating.value-5::after {
+  width: 100%;
+}
+
+/* Feedback */
+.feedback-text {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 32px;
+  color: #fbfbfb;
 }
 
 .feedback-author {
-  font-size: 14px;
+  font-family: var(--font-family);
   font-weight: 600;
-  color: #764191;
+  font-size: 18px;
+  line-height: 150%;
+  color: #fbfbfb;
 }
 
 /* === Swiper Arrows === */
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  display: none !important;
+  display: none;
 }
 
 .swiper-button-prev,
@@ -87,7 +146,7 @@
 
 .swiper-button-prev .arrow,
 .swiper-button-next .arrow {
-  display: block !important;
+  display: block;
   width: 14px;
   height: 14px;
   fill: #fbfbfb;
@@ -109,10 +168,31 @@
   opacity: 1;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+  background-color: #764191;
+  border: none;
+  margin-top: 16px;
+}
+
+.btn-txt {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #fbfbfb;
+}
+
 @media screen and (min-width: 768px) {
-  .feedback {
+  .feedback-section {
     max-width: 1312px;
-    padding: 0 32px;
+    padding: 64px 32px;
   }
 
   .swiper-button-prev,
@@ -123,94 +203,59 @@
     width: 48px !important;
     height: 48px !important;
     background-color: #060307;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+
     border-radius: 8px;
     position: absolute;
     top: 30%;
     cursor: pointer;
     z-index: 20;
   }
+
+  .swiper-button-prev:active,
+  .swiper-button-next:active {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .swiper-button-prev .arrow,
+  .swiper-button-next .arrow {
+    display: block;
+    width: 14px;
+    height: 14px;
+    fill: #fbfbfb;
+    pointer-events: none;
+  }
+
+  .btn {
+    border-radius: 12px;
+    padding: 10px 14px;
+    width: 158px;
+    height: 47px;
+  }
+
+  .btn-txt {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #fbfbfb;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  .feedback {
+  .feedback-section {
     width: 1312px;
+    padding: 112px 64px 239px;
   }
 
-  .arrow {
-    height: 15px !important;
-  }
-}
-
-/* === Rating via pure CSS === */
-.rating {
-  top: 0;
-  --star-size: 20px;
-  font-size: var(--star-size);
-  line-height: 1;
-  display: inline-block;
-  position: relative;
-  color: #fbfbfb; /* колір пустих зірок */
-  user-select: none;
-}
-
-/* Малюємо 5 зірок одночасно */
-.rating::before {
-  content: '★★★★★';
-}
-
-/* Накладка з заповненими зірками */
-.rating::after {
-  content: '★★★★★';
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  color: #764191; /* колір заповнених зірок */
-}
-
-/* Зміна ширини накладки залежно від рейтингу */
-.rating.value-0::after {
-  width: 0%;
-}
-.rating.value-1::after {
-  width: 20%;
-}
-.rating.value-2::after {
-  width: 40%;
-}
-.rating.value-3::after {
-  width: 60%;
-}
-.rating.value-4::after {
-  width: 80%;
-}
-.rating.value-5::after {
-  width: 100%;
-}
-
-.feedback-text {
-  font-family: var(--second-family);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: -0.01em;
-  text-align: center;
-  margin: 32px 0;
-  color: #fbfbfb;
-}
-
-.feedback-author {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 150%;
-  color: #fbfbfb;
-}
-
-/* Збільшені зірки на планшетах+ */
-@media screen and (min-width: 768px) {
-  .rating {
-    --star-size: 20px;
+  .btn {
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 177px;
+    height: 47px;
+    margin-top: 80px;
   }
 }
