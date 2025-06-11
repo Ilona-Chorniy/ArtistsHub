@@ -102,6 +102,12 @@
   
   .header-inner {
     padding: 24px 0;
+    
+  }
+
+  .header .container{
+    padding-left: 64px;
+    padding-right: 64px;
   }
   
   .logo-mobile {
