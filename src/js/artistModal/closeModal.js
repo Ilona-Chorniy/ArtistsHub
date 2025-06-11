@@ -13,7 +13,11 @@ function initCloseModalListeners() {
     closeButton.addEventListener('click', closeModal);
   }
   if (overlay) {
-    overlay.addEventListener('click', closeModal);
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) {
+        closeModal();
+      }
+    });
   }
 
   document.addEventListener('keydown', event => {
