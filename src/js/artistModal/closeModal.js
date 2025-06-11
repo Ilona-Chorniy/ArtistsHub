@@ -2,18 +2,22 @@ import { domRefs } from './domRefs.js';
 
 function closeModal() {
   domRefs.modal.classList.add('modal--hidden');
-  // можна тут очищати контент, якщо треба
+  document.body.classList.remove('no-scroll');
 }
 
 function initCloseModalListeners() {
   const closeButton = document.querySelector('.modal__close-button');
-  const overlay = document.querySelector('.modal__overlay');
+  const overlay = document.querySelector('.modal');
 
   if (closeButton) {
     closeButton.addEventListener('click', closeModal);
   }
   if (overlay) {
-    overlay.addEventListener('click', closeModal);
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) {
+        closeModal();
+      }
+    });
   }
 
   document.addEventListener('keydown', event => {

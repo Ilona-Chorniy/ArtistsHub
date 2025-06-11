@@ -35,7 +35,7 @@ export async function openModal(artistId) {
     console.log('🧪 genres container:', domRefs.artist.genres);
     renderGenres(domRefs.artist.genres, genres);
   } catch (error) {
-    console.error('Помилка завантаження артиста:', error.message, error);
+    console.error('Error to load artist data:', error.message, error);
     alert('Artist data not found');
     closeModal();
   } finally {
