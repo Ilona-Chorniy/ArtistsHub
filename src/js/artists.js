@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { openModal } from './modal';
 
 async function getArtistsInfo(page = 1) {
   try {
@@ -91,12 +92,11 @@ function createArtistsMarkup(arr) {
         </ul>
         <p class="artists-name">${strArtist}</p>
         <p class="artists-information">${textcorrect(strBiographyEN, 144)}</p>
-       <button class="artists-learn-more-card-btn open-artist-modal btn-click" data-artist-id="${_id}">
+       <button class="artists-learn-more-card-btn open-artist-modal" data-artist-id="${_id}">
        Learn More
-        <svg class="caret-right-icon" width="24" height="24" >
-        <use href="/img/artists.svg#icon-caret-right"></use>
+        <svg class="caret-right-icon" width="8" height="16" >
+        <use href="icons.svg#icon-caret-right"></use>
         </svg>
-
        </button>
      </li>
       `

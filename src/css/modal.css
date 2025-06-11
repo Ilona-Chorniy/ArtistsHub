@@ -16,7 +16,7 @@ h4 {
   justify-content: center;
   padding-top: 52px;
   padding-bottom: 52px;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.25);
   overflow: hidden;
   z-index: 1000;
 }
@@ -55,12 +55,12 @@ h4 {
 .modal__content {
   position: relative;
   display: flex;
-  /* background-color: #060307; */
+  background-color: #060307;
   padding: 52px 8px;
   max-width: 288px;
   border-radius: 16px;
   overflow: scroll;
-  max-height: 90vh;
+  max-height: 100vh;
   z-index: 1001;
 }
 
