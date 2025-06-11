@@ -7,20 +7,21 @@
   z-index: 100;
 }
 
+
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
+.header-logo {
   display: block;
   transition: opacity 0.3s ease;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.logo:hover {
+.header-logo:hover {
   opacity: 0.8;
 }
 
@@ -99,7 +100,12 @@
   }
 
   .header-inner {
-    padding: 20px 0;
+    padding: 24px 0;
+  }
+  
+  .header .container{
+    padding-left: 64px;
+    padding-right: 64px;
   }
 
   .logo-mobile {
@@ -112,6 +118,7 @@
 }
 
 @media screen and (min-width: 1440px) {
+
   .logo svg {
     width: 119px;
     height: 51px;
