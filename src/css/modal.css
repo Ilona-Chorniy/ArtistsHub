@@ -7,12 +7,17 @@ h4 {
 }
 
 .modal {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 52px;
   padding-bottom: 52px;
+  background-color: rgba(0, 0, 0, 0.85);
+  overflow: hidden;
   z-index: 1000;
 }
 
@@ -20,21 +25,13 @@ h4 {
   display: none;
 }
 
-.modal__overlay {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
-  z-index: 1000;
-  overflow: hidden;
-}
-
 .no-scroll {
   overflow: hidden;
-  min-height: 100%;
+  position: fixed; /* Зафіксувати позицію */
+  width: 100%; /* На всю ширину */
+  height: 100%; /* На всю висоту */
+  top: 0;
+  left: 0;
 }
 
 .artist-name {

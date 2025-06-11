@@ -2,12 +2,13 @@ import { domRefs } from './domRefs.js';
 
 function closeModal() {
   domRefs.modal.classList.add('modal--hidden');
+  document.body.classList.remove('no-scroll');
   // можна тут очищати контент, якщо треба
 }
 
 function initCloseModalListeners() {
   const closeButton = document.querySelector('.modal__close-button');
-  const overlay = document.querySelector('.modal__overlay');
+  const overlay = document.querySelector('.modal');
 
   if (closeButton) {
     closeButton.addEventListener('click', closeModal);
