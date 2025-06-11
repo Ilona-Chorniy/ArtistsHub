@@ -26,3 +26,7 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+main{
+  margin-top: 105px;
+}

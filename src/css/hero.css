@@ -1,9 +1,10 @@
 .hero-section {
-    padding: 64px 0 0;
+    padding: 64px 0 ;
     min-width: 320px;
     margin: 0 auto;
-    background-color: #23132b;
+    background: linear-gradient(180deg, #060307, #06030700 20%, #06030700 80%, #060307), #22132B;
     position: relative;
+
 }
 
 .hero-section::before,
@@ -17,15 +18,16 @@
     pointer-events: none;
 }
 
-.hero-section::before {
+
+/* .hero-section::before {
     top: -2px;
-    background: linear-gradient(180deg, #060307, rgba(35, 19, 43, 0) 30px);
+    background: linear-gradient(180deg, rgba(35, 19, 43, 0) 30px, #060307);
 }
 
 .hero-section::after {
     bottom: -2px;
-    background: linear-gradient(180deg, rgba(35, 19, 43, 0), #060307);
-}
+    background: linear-gradient(180deg, #060307, rgba(35, 19, 43, 0));
+} */
 
 .hero-title {
     font-weight: 700;
@@ -142,6 +144,19 @@
         height: 632px;
         width: 704px;
     }
+
+.hero-img::after{
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #060307 100%);
+}
+    
 }
 
 @media screen and (min-resolution: 192dpi) and (min-width: 768px) {
@@ -186,6 +201,18 @@
         flex-shrink: 0;
     }
 }
+
+    .hero-img::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #060307 100%);
+      pointer-events: none;
+      z-index: 2;
+  }
 
 @media screen and (min-resolution: 192dpi) and (min-width: 1440px) {
     .hero-img {
