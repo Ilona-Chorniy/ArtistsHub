@@ -105,18 +105,25 @@ function createArtistsMarkup(arr) {
   );
 }
 // openModal
-document.addEventListener('click', event => {
-  const openModalBtn = event.target.closest('.open-artist-modal');
-  if (openModalBtn) {
-    const artistId = openModalBtn.dataset.artistId;
+
+artistsList.addEventListener('click', onArtistCardClick);
+function onArtistCardClick(event) {
+  // Перевіряємо, чи клікнули на кнопку "Learn More"
+  // Перевіряємо, чи елемент, на який клікнули, або його батьківський елемент має клас 'open-artist-modal'
+  const targetButton = event.target.closest('.open-artist-modal');
+
+  if (targetButton) {
+    // Отримуємо artistId з data-атрибута кнопки
+    const artistId = targetButton.dataset.artistId;
+
     if (artistId) {
+      // Викликаємо функцію openModal з modal.js
       openModal(artistId);
     } else {
-      console.error('Artist ID not found on the button');
-      alert('Failed to determine the artist ID');
+      console.error('Artist ID not found on the clicked button.');
     }
   }
-});
+}
 
 // loader on/off
 const loader = document.querySelector('.loader');

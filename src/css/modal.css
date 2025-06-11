@@ -61,6 +61,7 @@ h4 {
   border-radius: 16px;
   overflow: scroll;
   max-height: 100vh;
+  max-width: 100%;
   z-index: 1001;
 }
 
@@ -138,6 +139,7 @@ h4 {
 .artist-card__info-genres {
   display: flex;
   gap: 16px;
+  align-items: end;
 }
 
 .artist-card__genres-list {
@@ -269,8 +271,8 @@ h4 {
 /* Styles for Tablet devices */
 @media screen and (min-width: 768px) {
   .modal__content {
-    max-width: 702px;
-    padding: 64px 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .artist-name {
@@ -317,8 +319,8 @@ h4 {
 /* Styles for Tablet devices */
 @media screen and (min-width: 1440px) {
   .modal__content {
-    max-width: 1312px;
-    padding: 64px 64px;
+    padding-left: 64px;
+    padding-right: 64px;
   }
 
   .artist-name {
