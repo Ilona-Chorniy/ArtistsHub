@@ -1,54 +1,109 @@
-/* Mobile Menu Styles */
-
-.modal-container {
-  min-height: 100vh;
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #060307;
+  z-index: 1100;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  isolation: isolate;
+  overscroll-behavior: contain;
 }
 
-.modal-window {
+.mobile-menu.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobile-menu-container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
 }
 
-.header-wrapper {
+.mobile-menu-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  justify-content: space-between;
+  margin-bottom: 39px;
+  padding: 6.5px 0;
 }
 
-.modal-window {
-  padding-left: 20px;
-  padding-right: 24px;
+.mobile-menu-logo {
+  display: block;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
-.close-btn {
-  line-height: 1;
+.mobile-menu-logo:hover {
+  opacity: 0.8;
+}
+
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
   border: none;
-  background: none;
   cursor: pointer;
   padding: 0;
+  transition: all 0.3s ease;
+  border-radius: 50%;
 }
-.content {
+
+.mobile-menu-nav {
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-menu-item:not(:first-child) {
+  margin-top: 32px;
+}
+
+.mobile-menu-link {
+  color: #fbfbfb;
+  text-decoration: none;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 26px;
   font-weight: 500;
-  line-height: 150%;
-  gap: 32px;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  display: block;
+  cursor: pointer;
 }
 
-.modal-container {
-  display: none;
+.mobile-menu-link:hover {
+  color: #764191;
 }
 
-.active {
-  display: flex;
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open > *:not(.mobile-menu) {
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
-  .modal-container {
+  .mobile-menu {
     display: none;
   }
 }
