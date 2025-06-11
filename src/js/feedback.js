@@ -3,8 +3,6 @@ import 'swiper/css/bundle';
 import axios from 'axios';
 import { openFeedbackModal } from './feedback-modal.js';
 
-import 'css-star-rating/css/star-rating.min.css';
-
 document.addEventListener('DOMContentLoaded', async () => {
   const slides = await loadFeedbacks();
   if (slides.length >= 3) initSwiper();
