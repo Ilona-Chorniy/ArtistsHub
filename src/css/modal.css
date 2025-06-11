@@ -55,7 +55,7 @@ h4 {
 .modal__content {
   position: relative;
   display: flex;
-  background-color: #060307;
+  /* background-color: #060307; */
   padding: 52px 8px;
   max-width: 288px;
   border-radius: 16px;
