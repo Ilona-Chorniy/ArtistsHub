@@ -52,8 +52,6 @@
 }
 
 .about-section-description {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
         font-size: 18px;
         line-height: 1.5;
         color: #fff;
@@ -94,7 +92,7 @@
     .about-us-container{
             flex-direction: row;
             gap: 32px;
-            width: 1312px;
+            /* width: 1312px; */
     }
         .about-us-img-container{
             width: 640px;
