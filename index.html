@@ -84,24 +84,23 @@
   </div>
 </section>
 
-      <div class="div-section-wrapper">
-<section  id="artists" class="artists-section container">
-<h2 class="artists-title">Artists</h2>
-<h3 class="artists-subtitle">Explore Your New Favorite Artists</h3>
-<ul class="artists-list"></ul>
-<div class="artists-load-more-btn-wrapper">
-    <div class="loader-and-btn-wrapper">
-    <span class="loader visually-hidden"></span>
-    </div> 
-    <button class="artists-load-more-btn">Load More
+      <section id="artists" class="div-section-wrapper">
+  <div class="artists-section container">
+    <h2 class="artists-title">Artists</h2>
+    <h3 class="artists-subtitle">Explore Your New Favorite Artists</h3>
+    <ul class="artists-list"></ul>
+    <div class="artists-load-more-btn-wrapper">
+      <div class="loader-and-btn-wrapper">
+        <span class="loader visually-hidden"></span>
+      </div>
+      <button class="artists-load-more-btn">
+        Load More
         <svg class="scroll-down-icon" width="24" height="24" fill="#ffffff">
-            <use href="/ArtistsHub/assets/artists-CYV0QDvp.svg#icon-down-arrow-alt"></use>
+          <use href="/ArtistsHub/assets/artists-DQa-t8MH.svg#icon-down-arrow-alt"></use>
         </svg>
-        </button>
-
-</div>
-
-</div>
+      </button>
+    </div>
+  </div>
 </section>
       <section class="about-us" id="about">
     <div class="container about-us-container">
@@ -144,6 +143,7 @@
 </section>
 
       <section class="feedback-section" id="reviews">
+  <h2 class="visually-hidden ">feedback</h2>
   <div class="container feedback-container">
     <div class="swiper feedback-swiper">
       <ul class="swiper-wrapper" id="feedback-container"></ul>
@@ -162,9 +162,9 @@
       </div>
     </div>
   </div>
-  <button class="btn" type="submit" id="open-feedback">
-    <p class="btn-txt">Leave feedback</p>
-  </button>
+  <button class="btn btn-txt" type="submit" id="open-feedback">
+  Leave feedback 
+</button>
 </section>
 
       <div class="mobile-menu" data-menu>
@@ -199,8 +199,7 @@
   </div>
 </div>
 
-      <!-- Window of modal -->
-<div
+      <div
   class="modal modal--hidden open-artist-modal"
   id="artistModal"
   role="dialog"
@@ -215,7 +214,6 @@
       title="Close the window"
     ></button>
 
-    <!-- Loader -->
     <div id="artistDataLoader" class="loader-hidden">
       <div class="spinner"></div>
     </div>
@@ -254,18 +252,15 @@
         </ul>
       </div>
 
-      <!--  Artist Albums  -->
-
       <h2 class="albums">Albums</h2>
       <div class="albums-container"></div>
     </section>
   </div>
 </div>
 
-      <section class="modal-feedback-section">
-  <div class="modal-feedback-backdrop">
+        <div class="modal-feedback-backdrop">
     <div class="container modal-feedback-wrapper">
-      <span class="notifications visually-hidden">
+      <div class="notifications visually-hidden">
         <span class="succes visually-hidden"
           >Thank you for your feedback!
         </span>
@@ -279,10 +274,10 @@
           </div>
           <div class="mouth"></div>
         </div>
-      </span>
+      </div>
       <div class="data-wrapper">
         <button class="modal-feedback-close" type="button">
-          <svg class="modal-close-icon" width="14" heigth="14">
+          <svg class="modal-close-icon" width="14" height="14">
             <use href="/ArtistsHub/assets/modal-feedback-DqvnchiA.svg#close"></use>
           </svg>
         </button>
@@ -299,7 +294,7 @@
                 name="modalFeedbackName"
                 type="text"
                 placeholder="Emily"
-              />
+              >
               <span class="input-text-error name-error"
                 >Name must be between 2 and 16 characters.</span
               >
@@ -314,7 +309,6 @@
                 class="modal-feedback-input message-input"
                 id="modal-feedback-message"
                 name="modalFeedbackMessage"
-                type="text"
                 placeholder="Type your message..."
                 rows="4"
               ></textarea>
@@ -330,11 +324,11 @@
                 id="radio-1"
                 type="radio"
                 name="star"
-                value="1" /><label for="radio-1"
+                value="1"><label for="radio-1"
                 ><svg
                   class="modal-feedback-stars star1"
                   width="30"
-                  heigth="30"
+                  height="30"
                   data-value="1"
                 >
                   <use href="/ArtistsHub/assets/modal-feedback-DqvnchiA.svg#star"></use></svg></label
@@ -345,11 +339,11 @@
                 id="radio-2"
                 type="radio"
                 name="star"
-                value="2" /><label for="radio-2"
+                value="2"><label for="radio-2"
                 ><svg
                   class="modal-feedback-stars star2"
                   width="30"
-                  heigth="30"
+                  height="30"
                   data-value="2"
                 >
                   <use href="/ArtistsHub/assets/modal-feedback-DqvnchiA.svg#star"></use></svg></label
@@ -360,11 +354,11 @@
                 id="radio-3"
                 type="radio"
                 name="star"
-                value="3" /><label for="radio-3"
+                value="3"><label for="radio-3"
                 ><svg
                   class="modal-feedback-stars star3"
                   width="30"
-                  heigth="30"
+                  height="30"
                   data-value="3"
                 >
                   <use href="/ArtistsHub/assets/modal-feedback-DqvnchiA.svg#star"></use></svg></label
@@ -375,11 +369,11 @@
                 id="radio-4"
                 type="radio"
                 name="star"
-                value="4" /><label for="radio-4"
+                value="4"><label for="radio-4"
                 ><svg
                   class="modal-feedback-stars star4"
                   width="30"
-                  heigth="30"
+                  height="30"
                   data-value="4"
                 >
                   <use href="/ArtistsHub/assets/modal-feedback-DqvnchiA.svg#star"></use></svg></label
@@ -390,11 +384,11 @@
                 id="radio-5"
                 type="radio"
                 name="star"
-                value="5" /><label for="radio-5"
+                value="5"><label for="radio-5"
                 ><svg
                   class="modal-feedback-stars star5"
                   width="30"
-                  heigth="30"
+                  height="30"
                   data-value="5"
                 >
                   <use href="/ArtistsHub/assets/modal-feedback-DqvnchiA.svg#star"></use></svg></label
@@ -410,11 +404,10 @@
       </button>
     </div>
   </div>
-</section>
 
     </main>
-    <div class="container">
-  <footer class="footer">
+    <footer class="container">
+  <div class="footer">
     <div class="footer-container">
       <a href="/" class="logo">
         <svg class="" width="106" height="30">
@@ -463,9 +456,8 @@
         </a>
       </div>
     </div>
-  </footer>
-</div>
-
+  </div>
+</footer>
 
   </body>
 </html>
