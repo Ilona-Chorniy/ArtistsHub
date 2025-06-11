@@ -1,6 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import axios from 'axios';
+import openFeedbackModal from '/js/feedback-modal';
 
 import 'css-star-rating/css/star-rating.min.css';
 
@@ -73,7 +74,6 @@ function initSwiper() {
   });
 }
 
-import openFeedbackModal from './js/feedback-modal';
 
 const btn = document.querySelector('#open-feedback');
 if (btn) {
