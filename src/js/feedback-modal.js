@@ -14,6 +14,9 @@ const nameError = document.querySelector('.name-error');
 const messageError = document.querySelector('.message-error');
 const ratingError = document.querySelector('.rating-error');
 
+let closeModalTimeoutId = null;
+let notificationTimeoutId = null;
+
 function handleBackdropClick(e) {
   if (e.target === backdrop) closeModal();
 }
@@ -95,11 +98,7 @@ export async function handleFormSubmit(e) {
 
     console.log(userData);
 
-    // formDataWrapper.classList.add('slide-out-elliptic-bottom-bck');
-    // submitBtn.classList.add('submited');
-    // modalWrapper.classList.add('submited');
-
-    setTimeout(() => {
+    notificationTimeoutId = setTimeout(() => {
       notificationsWrap.classList.remove('visually-hidden');
       succesMsg.classList.remove('visually-hidden');
       succesMsg.classList.add('is-onscreen');
@@ -110,7 +109,7 @@ export async function handleFormSubmit(e) {
     }, 1200);
   } catch (error) {
     console.error(error);
-    setTimeout(() => {
+    notificationTimeoutId = setTimeout(() => {
       notificationsWrap.classList.remove('visually-hidden');
       failMsg.classList.remove('visually-hidden');
       failMsg.classList.add('is-onscreen');
@@ -124,7 +123,7 @@ export async function handleFormSubmit(e) {
 
     form.reset();
     stars.forEach(star => star.classList.remove('filled'));
-    setTimeout(() => {
+    closeModalTimeoutId = setTimeout(() => {
       closeModal();
     }, 5500);
   }
@@ -143,6 +142,15 @@ export function handleStarMouseOut() {
 }
 
 export function openFeedbackModal() {
+  if (closeModalTimeoutId) {
+    clearTimeout(closeModalTimeoutId);
+    closeModalTimeoutId = null;
+  }
+  if (notificationTimeoutId) {
+    clearTimeout(notificationTimeoutId);
+    notificationTimeoutId = null;
+  }
+  resetFeedbackModalState();
   document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
   modal.classList.toggle('is-open');
@@ -165,6 +173,8 @@ export function closeModal() {
 
   form.removeEventListener('submit', handleFormSubmit);
   closeBtn.removeEventListener('click', closeModal);
+  backdrop.removeEventListener('click', handleBackdropClick);
+  window.removeEventListener('keydown', handleEscDown);
 
   stars.forEach(star => {
     star.removeEventListener('click', handleClickStar);
@@ -173,4 +183,29 @@ export function closeModal() {
   });
 }
 
+function resetFeedbackModalState() {
+  nameError.classList.remove('is-onscreen');
+  messageError.classList.remove('is-onscreen');
+  ratingError.classList.remove('is-onscreen');
+  const nameInput = form.elements.modalFeedbackName;
+  const messageInput = form.elements.modalFeedbackMessage;
+  nameInput.classList.remove('input-error');
+  messageInput.classList.remove('input-error');
 
+  notificationsWrap.classList.add('visually-hidden');
+  succesMsg.classList.add('visually-hidden');
+  succesMsg.classList.remove('is-onscreen');
+  failMsg.classList.add('visually-hidden');
+  failMsg.classList.remove('is-onscreen');
+
+  smiley.classList.add('visually-hidden');
+  smiley.classList.remove('is-onscreen', 'happy');
+  smiley.classList.add('normal');
+
+  formDataWrapper.classList.remove('slide-out-elliptic-bottom-bck');
+  submitBtn.classList.remove('submited');
+  modalWrapper.classList.remove('submited');
+
+  form.reset();
+  stars.forEach(star => star.classList.remove('filled', 'hovered'));
+}
