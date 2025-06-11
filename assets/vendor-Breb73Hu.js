@@ -8,4 +8,4 @@ function rs(t,e){return function(){return t.apply(e,arguments)}}const{toString:$
         rotateZ(${l.rotate?u?-P:P:0}deg)
         scale(${z})
       `;if(l.slideShadows){let D=o.querySelector(".swiper-slide-shadow");D||(D=Ce("cards",o)),D&&(D.style.opacity=Math.min(Math.max((Math.abs(h)-.5)/.5,0),1))}o.style.zIndex=-Math.abs(Math.round(c))+a.length;const L=_e(l,o);L.style.transform=O}},setTransition:a=>{const d=e.slides.map(u=>Ee(u));d.forEach(u=>{u.style.transitionDuration=`${a}ms`,u.querySelectorAll(".swiper-slide-shadow").forEach(l=>{l.style.transitionDuration=`${a}ms`})}),ot({swiper:e,duration:a,transformElements:d})},perspective:()=>!0,overwriteParams:()=>({_loopSwapReset:!1,watchSlidesProgress:!0,loopAdditionalSlides:e.params.cardsEffect.rotate?3:2,centeredSlides:!0,virtualTranslate:!e.params.cssMode})})}const sa=[Ln,An,On,In,zn,Dn,Rn,$n,kn,Bn,Nn,Fn,Hn,_n,Gn,Xn,Un,Kn,Jn,Zn,Qn,ea,ta];ie.use(sa);export{ie as S,Y as a};
-//# sourceMappingURL=vendor-CCfgLW0g.js.map
+//# sourceMappingURL=vendor-Breb73Hu.js.map
