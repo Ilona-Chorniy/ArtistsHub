@@ -2,7 +2,6 @@
 html,
 body {
   overflow-x: hidden; /* Запобігає горизонтальному скролу, якщо він не потрібен */
-  scrollbar-gutter: stable;
 }
 
 html {
@@ -27,6 +26,6 @@ body {
   overflow: hidden;
 }
 
-main{
+main {
   margin-top: 105px;
 }

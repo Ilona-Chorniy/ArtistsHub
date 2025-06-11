@@ -66,8 +66,7 @@
 
 /* Stars-rating */
 .rating {
-  --star-size: 20px;
-  font-size: var(--star-size);
+  font-size: 20px;
   line-height: 1;
   display: inline-block;
   position: relative;
