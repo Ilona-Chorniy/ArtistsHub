@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import axios from 'axios';
-import openFeedbackModal from '/js/feedback-modal';
+import { openFeedbackModal } from './feedback-modal.js'
 
 import 'css-star-rating/css/star-rating.min.css';
 
