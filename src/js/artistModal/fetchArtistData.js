@@ -11,7 +11,6 @@ export async function fetchArtistData(artistId) {
 
   const artistData = artistRes.data;
 
-  // 🧠 Виправлення тут:
   const allArtists = allArtistsRes.data.artists || [];
 
   if (!artistData?.strArtist) throw new Error('No artist data');
@@ -24,16 +23,6 @@ export async function fetchArtistData(artistId) {
   } else if (fullArtistData.genres) {
     artistData.genres = fullArtistData.genres;
   }
-
-  console.log('🎯 жанри:', allArtists);
-  console.log('🎯 жанри:', fullArtistData);
-
-  console.log('typeof artistId:', typeof artistId, artistId);
-  console.log(
-    'sample allArtists._id:',
-    allArtists[0]._id,
-    typeof allArtists[0]._id
-  );
 
   return artistData;
 }
