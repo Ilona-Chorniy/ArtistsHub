@@ -3,7 +3,6 @@ import { domRefs } from './domRefs.js';
 function closeModal() {
   domRefs.modal.classList.add('modal--hidden');
   document.body.classList.remove('no-scroll');
-  // можна тут очищати контент, якщо треба
 }
 
 function initCloseModalListeners() {
