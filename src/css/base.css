@@ -1,29 +1,19 @@
+/* Base styles for the application */
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: hidden; /* Запобігає горизонтальному скролу, якщо він не потрібен */
   scrollbar-gutter: stable;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   color: #fbfbfb;
   background-color: #060307;
 }
-
-
-a, button, [role="button"], input[type="submit"], input[type="button"] {
-  cursor: pointer;
-}
-
-a:hover, button:hover, [role="button"]:hover {
-  transition: all 0.3s ease;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;

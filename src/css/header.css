@@ -43,11 +43,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 32px;
 }
 
-.nav-item:not(:last-child) {
+/* .nav-item:not(:last-child) {
   margin-right: 32px;
-}
+} */
 
 .nav-link {
   color: #ffffff;
