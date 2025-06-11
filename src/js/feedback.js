@@ -73,8 +73,11 @@ function initSwiper() {
   });
 }
 
-// import openFeedbackModal from './js/modal';
+import openFeedbackModal from './js/feedback-modal';
 
-// document.addEventListener('submit'()=> {
-//   openFeedbackModal()
-// })
+const btn = document.querySelector('#open-feedback');
+if (btn) {
+  btn.addEventListener('click', () => {
+    openFeedbackModal();
+  });
+}
