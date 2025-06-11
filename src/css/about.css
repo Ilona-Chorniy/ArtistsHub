@@ -1,1 +1,110 @@
+.about-us {
+    padding: 64px 0;
+    background-color: #000;
+    color: #fff;
+}
 
+.about-us-container{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 48px;
+}
+.about-us-img-container{
+    border-radius: 16px;
+        width: 280px;
+}
+.about-us-image {
+    height: 100%;
+
+}
+
+.logo-image {
+    fill: #fff;
+}
+
+.about-us-content{
+    display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        
+}
+.about-us-descrp{
+    display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 280px;
+        gap: 20px;
+        
+}
+.about-section-title {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0;
+}
+
+.about-section-description {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #fff;
+        margin: 0;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .about-us-container{
+        gap: 24px;
+    }
+    .about-us-img-container{
+        width: 704px;
+    }
+    .about-us-content{
+        gap: 32px;
+        width: 704px;
+    }
+    .logo-image{
+        width: 80px;
+        height: 80px;
+    }
+    .about-us-descrp{
+        gap: 24px;
+        width: 704px;
+    }
+    .about-section-description{
+        font-size: 20px;
+    }
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+    .about-us{
+        padding: 112px 0;
+    }
+    .about-us-container{
+            flex-direction: row;
+            gap: 32px;
+            /* width: 1312px; */
+    }
+        .about-us-img-container{
+            width: 640px;
+        }
+        .about-us-content{
+            width: 640px;
+            gap: 24px;
+        }
+        .about-us-descrp{
+            width: 640px;
+        }
+        .about-section-title{
+            font-size: 60px;
+        }
+}
