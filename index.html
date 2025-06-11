@@ -5,23 +5,43 @@
     <link rel="icon" type="image/svg+xml" href="/ArtistsHub/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArtistsHub</title>
+    
+   <!-- Normalize CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+  integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<!-- SEO мета -->
+<meta
+  name="description"
+  content="ArtistsHub - a platform for artists and musical performers. Discover talents, find new artists and enjoy music."
+/>
+<meta
+  name="keywords"
+  content="artists, musicians, performers, music, songs, albums"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600&family=Epilogue:wght@700&family=Roboto:wght@700&display=swap"
+  rel="stylesheet"
+/>
+    
+    
+    
+    
+    <!-- css-star-rating (global UMD) -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  
-    <meta name="description" content="ArtistsHub - a platform for artists and musical performers. Discover talents, find new artists and enjoy music." />
-<meta name="keywords" content="artists, musicians, performers, music, songs, albums" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600&family=Epilogue:wght@700&family=Roboto:wght@700&display=swap"
-      rel="stylesheet"
-    />
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/css-star-rating@latest/css/star-rating.min.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/css-star-rating@latest/dist/star-rating.min.js"></script>
     <script type="module" crossorigin src="/ArtistsHub/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/ArtistsHub/assets/vendor-B2YOV0tR.js">
-    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/index-Dfli3IGc.css">
+    <link rel="modulepreload" crossorigin href="/ArtistsHub/assets/vendor-CCfgLW0g.js">
+    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/vendor-CD4uQvQH.css">
+    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/index-Z10xYVe3.css">
   </head>
   <body>
     
@@ -106,7 +126,30 @@
     </div>
 </section>
 
-      
+      <section class="feedback-section" id="reviews">
+  <div class="container">
+    <div class="swiper feedback-swiper">
+      <ul class="swiper-wrapper" id="feedback-container"></ul>
+      <div class="swiper-pagination custom-pagination"></div>
+      <div class="swiper-button-prev">
+        <svg class="arrow" width="14" height="14">
+          <use href="../img/feedback/feedback-arrows.svg#icon-left-arrow"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg class="arrow" width="14" height="14">
+          <use
+            href="../img/feedback/feedback-arrows.svg#icon-right-arrow"
+          ></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <button class="btn" type="submit" id="open-feedback">
+    <p class="btn-txt">Leave feedback</p>
+  </button>
+</section>
+
       <div id="modal" class="modal-container active">
   <!-- active тут, когда модалка открыта -->
   <div class="modal-window container">
@@ -375,7 +418,6 @@
     </div>
   </footer>
 </div>
-
 
   </body>
 </html>
