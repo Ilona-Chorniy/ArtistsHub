@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { openModal } from './modal';
 
 async function getArtistsInfo(page = 1) {
   try {
@@ -91,12 +92,11 @@ function createArtistsMarkup(arr) {
         </ul>
         <p class="artists-name">${strArtist}</p>
         <p class="artists-information">${textcorrect(strBiographyEN, 144)}</p>
-       <button class="artists-learn-more-card-btn open-artist-modal btn-click" data-artist-id="${_id}">
+       <button class="artists-learn-more-card-btn open-artist-modal" data-artist-id="${_id}">
        Learn More
-        <svg class="caret-right-icon" width="24" height="24" >
-        <use href="/img/artists.svg#icon-caret-right"></use>
+        <svg class="caret-right-icon" width="8" height="16" >
+        <use href="/img/icons.svg#icon-caret-right"></use>
         </svg>
-
        </button>
      </li>
       `
@@ -105,18 +105,25 @@ function createArtistsMarkup(arr) {
   );
 }
 // openModal
-document.addEventListener('click', event => {
-  const openModalBtn = event.target.closest('.open-artist-modal');
-  if (openModalBtn) {
-    const artistId = openModalBtn.dataset.artistId;
+
+artistsList.addEventListener('click', onArtistCardClick);
+function onArtistCardClick(event) {
+  // Перевіряємо, чи клікнули на кнопку "Learn More"
+  // Перевіряємо, чи елемент, на який клікнули, або його батьківський елемент має клас 'open-artist-modal'
+  const targetButton = event.target.closest('.open-artist-modal');
+
+  if (targetButton) {
+    // Отримуємо artistId з data-атрибута кнопки
+    const artistId = targetButton.dataset.artistId;
+
     if (artistId) {
+      // Викликаємо функцію openModal з modal.js
       openModal(artistId);
     } else {
-      console.error('Artist ID not found on the button');
-      alert('Failed to determine the artist ID');
+      console.error('Artist ID not found on the clicked button.');
     }
   }
-});
+}
 
 // loader on/off
 const loader = document.querySelector('.loader');
