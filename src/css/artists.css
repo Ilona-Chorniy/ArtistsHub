@@ -11,7 +11,6 @@
   .artists-subtitle {
     display: flex;
     width: 288px;
-    height: 159px;
     font-family: 'Epilogue', sans-serif;
     font-weight: 700;
     font-size: 44px;
@@ -155,7 +154,6 @@
   .artists-subtitle {
     display: flex;
     width: 704px;
-    height: 159px;
     font-family: 'Epilogue', sans-serif;
     font-weight: 700;
     font-size: 44px;
@@ -269,7 +267,6 @@
   .artists-subtitle {
     display: flex;
     width: 523px;
-    height: 144px;
     font-weight: 700;
     font-size: 60px;
     line-height: 1.2;

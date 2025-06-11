@@ -11,13 +11,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6.5px 0;
 }
 
 .logo {
   display: block;
   transition: opacity 0.3s ease;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
@@ -89,35 +89,29 @@
   fill: #764191;
 }
 
-
 @media screen and (min-width: 768px) {
   .nav {
     display: block;
   }
-  
+
   .burger {
     display: none;
   }
-  
+
   .header-inner {
     padding: 20px 0;
   }
-  
+
   .logo-mobile {
     display: none;
   }
-  
+
   .logo-desktop {
     display: block;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  
-  .header-inner {
-    padding: 10.5px 0;
-  }
-  
   .logo svg {
     width: 119px;
     height: 51px;
