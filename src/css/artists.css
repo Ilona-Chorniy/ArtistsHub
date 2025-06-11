@@ -85,6 +85,11 @@
     flex-wrap: wrap;
     gap: 64px;
   }
+
+  .caret-right-icon {
+    fill: #fff;
+  }
+
   .artists-load-more-btn {
     display: flex;
     border-radius: 12px;
