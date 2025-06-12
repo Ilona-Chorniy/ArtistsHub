@@ -45,6 +45,7 @@
   flex-direction: column;
   gap: 56px;
   justify-content: center;
+  align-items: center;
 }
 
 .footer-nav ul li a {

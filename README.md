@@ -1,57 +1,40 @@
-1. Створити нову локальну гілку і перейти в неї:
+🎶 ArtistsHub is a modern, stylish website connecting music lovers with talented
+artists worldwide. Discover new favorites, explore genres, listen to music, read
+biographies, and share your impressions through reviews.
 
-Команда: `git switch -c назва_гілки` Ця команда створює нову гілку лише локально
-(на твоєму комп’ютері) та одразу перемикає тебе на неї.
+Adaptive & Intuitive Navigation: 📌A fixed header with a prominent logo and
+clear navigation ensures effortless Browse across all devices.  📱Mobile users
+benefit from a convenient burger menu, and clicking the logo always returns you
+to the main page.
 
-2. Перейти на вже існуючу гілку:
+Dynamic Artist Feed: 🎤 The Artists section features a dynamic feed of musician
+cards, each displaying a photo, genres, and a brief overview. 🔎 "Learn More"
+reveals a modal window with full artist history, founding dates, band members,
+discographies with song listings, and YouTube links.
 
-Команда: `git switch назва_гілки` Якщо така гілка вже існує (локально або
-віддалено), ця команда дозволяє перейти на неї.
+Interactive Feedback System: ⭐️ The Reviews section is a live hub showcasing
+visitor feedback via an engaging slider with star ratings and testimonials.  👆
+Navigation is intuitive (swipe/buttons), and a dedicated form allows easy
+submission of new reviews and ratings.
 
-3. Відправити створену локальну гілку на GitHub:
+Technologies Under the Hood ArtistsHub is built with a focus on modern web
+standards, performance, and user experience:
 
-Команда: `git push --set-upstream origin назва_гілки` Ця команда відправляє твою
-локальну гілку на віддалений репозиторій (GitHub) і створює між ними зв’язок,
-щоб у майбутньому ти міг просто писати `git push` або `git pull`.
+▪️HTML: Provides the robust structural foundation for all content. ▪️CSS:
+Delivers the stylish and adaptive visual design. ▪️JavaScript (ES6+): Powers the
+interactive elements, dynamic content loading, and smooth user flows.
+▪️Potential use of specialized libraries/frameworks for enhanced functionality
+will be integrated as needed.
 
-4. Отримати останні зміни з віддаленої гілки (наприклад, `main`):
+Technical Highlights This platform is designed for a seamless user experience,
+with a focus on performance and robust functionality:
 
-Команда: `git pull` Ця команда завантажує і об'єднує останні зміни з віддаленої
-гілки до твоєї поточної гілки.
+✅ Fully Responsive: Flawless display on mobile (320px), tablet (768px), and
+desktop (1440px). ✅ Optimized Performance: Retina-ready images and a clean
+console. ✅ Intuitive Interactions: Clear cursor changes on hover for all
+clickable elements. ✅ Robust Backend: Visible loading indicators and error
+handling with push notifications for all requests. ✅ Dynamic Content: Artist
+and review data fetched from an API; "Load More" for artists. ✅ Smart Modals:
+Prevent background scrolling and manage event listeners correctly.
 
-5. Подивитись, на якій гілці ти зараз перебуваєш:
-
-Команда: `git branch` Виводить список усіх локальних гілок. Поточна гілка буде
-позначензірочкою `*`.
-
-6. Показати всі віддалені гілки (на GitHub):
-
-Команда: `git branch -r` Показує тільки ті гілки, які є на сервері GitHub.
-
-7. Показати всі гілки (локальні і віддалені):
-
-Команда: `git branch -a` Показує повний список гілок — і ті, що на твоєму
-комп’ютері, і ті, щона GitHub.
-
----
-
-8. Злити іншу гілку в поточну:
-
-Команда: `git merge назва_гілки` Використовується, коли ти хочеш об’єднати зміни
-з іншої гілки у поточну(наприклад, з feature-гілки в main). Перед цим краще
-перевірити, що всізміни погоджені.
-
-9. Відмінити злиття (merge), якщо виникли проблеми або конфлікти: Команда:
-   `git merge --abort` Повертає тебе до стану до початку об’єднання.
-
-10. Видалити локальну гілку: Команда: `git branch -d назва_гілки` Видаляє гілку
-    з твого комп’ютера. Важливо: ти не можеш видалити гілку, в якій зараз
-    знаходишся — спочатку треба перейти на іншу.
-
-11. Видалити гілку з GitHub (віддалену): Команда:
-    `git push origin --delete назва_гілки` Видаляє гілку з віддаленого
-    репозиторію на GitHub. Зазвичай використовується разом із видаленням
-    локальної гілки.
-
-Встанови базові залежності проекту в терміналі командою npm install. Запусти
-режим розробки, виконавши в терміналі команду npm run dev.
+Dive into ArtistsHub and discover your next musical obsession!
