@@ -22,18 +22,11 @@
   overflow: hidden;
 }
 
-/* .feedback-container {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  background-color: #060307;
-  z-index: 0;
-} */
-
 .feedback-container {
   cursor: pointer;
+  width: 100%;
   z-index: 0;
+  margin-bottom: 16px;
 }
 
 .swiper {
@@ -43,11 +36,8 @@
 }
 
 .swiper-wrapper {
-  margin-bottom: 16px;
-}
-
-.swiper-wrapper {
   display: flex;
+  margin-bottom: 16px;
 }
 
 .swiper-slide {
@@ -113,17 +103,6 @@
 }
 
 /* Feedback */
-/* .feedback-text {
-  font-family: var(--second-family);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: -0.01em;
-  text-align: center;
-  margin: 32px;
-  color: #fbfbfb;
-} */
-
 .feedback-text {
   font-family: var(--second-family);
   font-weight: 700;
@@ -131,7 +110,7 @@
   line-height: 140%;
   letter-spacing: -0.01em;
   text-align: center;
-  padding: 0 32px;
+  margin: 32px 0;
 }
 
 .feedback-author {
@@ -148,9 +127,9 @@
   display: none;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
+.feedback-swiper .swiper-button-prev,
+.feedback-swiper .swiper-button-next {
+  display: none;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -168,17 +147,17 @@
 }
 
 /* === Pagination === */
-.swiper-pagination-bullet {
+.feedback-swiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #585757 !important;
+  background-color: #585757;
   opacity: 0.5;
   margin: 0 6px;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #fbfbfb !important;
+.feedback-swiper .swiper-pagination-bullet-active {
+  background-color: #fbfbfb;
   opacity: 1;
 }
 
@@ -192,7 +171,14 @@
   height: 47px;
   background-color: #764191;
   border: none;
-  /* margin-top: 16px; */
+}
+
+.btn:hover {
+  background-color: #603177;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), inset 0 -2px 1px rgba(0, 0, 0, 0.3),
+    inset 0 2px 1px rgba(255, 255, 255, 0.2);
+  outline: none;
+  transform: translateY(-1px);
 }
 
 .btn-txt {
@@ -208,13 +194,13 @@
     max-width: 1312px;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: flex !important;
+  .feedback-swiper .swiper-button-prev,
+  .feedback-swiper .swiper-button-next {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 48px !important;
-    height: 48px !important;
+    width: 48px;
+    height: 48px;
     background-color: #060307;
     border-radius: 8px;
     position: absolute;
@@ -264,11 +250,14 @@
     padding-bottom: 112px;
   }
 
+  .feedback-container {
+    margin-bottom: 80px;
+  }
+
   .btn {
     border-radius: 12px;
     padding: 10px 24px;
     width: 177px;
     height: 47px;
-    margin-top: 80px;
   }
 }
