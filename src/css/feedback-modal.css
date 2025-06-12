@@ -82,7 +82,7 @@
 }
 
 .modal-feedback-heading,
-.succes,
+.success,
 .fail {
   text-align: center;
   font-family: 'Epilogue', sans-serif;
@@ -91,7 +91,7 @@
   color: #fff;
 }
 
-.succes,
+.success,
 .fail {
   font-size: 22px;
   margin-top: 80px;
@@ -101,7 +101,7 @@
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.succes.is-onscreen,
+.success.is-onscreen,
 .fail.is-onscreen {
   opacity: 1;
 }
@@ -231,14 +231,14 @@ label:hover .modal-feedback-stars {
   }
 
   .modal-feedback-heading,
-  .succes,
+  .success,
   .fail {
     font-size: 44px;
     line-height: 120%;
     margin-bottom: 48px;
   }
 
-  .succes,
+  .success,
   .fail {
     margin-bottom: 0;
   }
@@ -268,7 +268,7 @@ label:hover .modal-feedback-stars {
   }
 
   .modal-feedback-heading,
-  .succes,
+  .success,
   .fail {
     font-size: 60px;
   }
