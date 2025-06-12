@@ -1,6 +1,4 @@
-/* #region mobile devices */
-
-@media screen and (max-width: 768px) and (min-resolution: 192dpi) {
+@media screen and (max-width: 768px) {
   .artists-title {
     font-weight: 600;
     font-size: 16px;
@@ -138,11 +136,9 @@
   color: #764191;
   fill: #764191;
 }
-/* #endregion mobile devices*/
 
-/* #region Tablet devices */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .artists-title {
     font-weight: 600;
     font-size: 16px;
@@ -259,9 +255,6 @@
   }
 }
 
-/*  #endregion Tablet devices */
-
-/* #region Desktop devices */
 
 @media screen and (min-width: 1440px) {
   .artists-subtitle {
@@ -298,9 +291,6 @@
   }
 }
 
-/* #endregion Desktop devices */
-
-/* #region loader */
 
 .loader-and-btn-wrapper {
   position: relative;
@@ -344,7 +334,7 @@
     transform: rotate(360deg);
   }
 }
-/* #endregion loader */
+
 
 .div-section-wrapper {
   min-height: 100vh;
