@@ -8,27 +8,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (slides.length >= 3) initSwiper();
 });
 
-axios.defaults.baseURL = 'https://sound-wave.b.goit.study/api/';
+axios.defaults.baseURL = 'https://sound-wave.b.goit.study/api';
 
 async function loadFeedbacks() {
   try {
-    const response = await axios.get(
-      'https://sound-wave.b.goit.study/api/feedbacks',
-      { params: { limit: 3, page: 1 } }
-    );
-    const feedbacks = Array.isArray(response.data)
-      ? response.data
-      : response.data.data;
+    const allRes = await axios.get('/feedbacks', {
+      params: { limit: 25, page: 1 },
+    });
 
-    console.log('Отримано відгуків:', feedbacks);
+    const all = Array.isArray(allRes.data) ? allRes.data : allRes.data.data;
 
-    if (!Array.isArray(feedbacks) || feedbacks.length === 0) {
+    console.log('Усі відгуки з бекенду:', all);
+
+    if (!Array.isArray(all) || all.length === 0) {
       console.warn('Список відгуків порожній.');
       return [];
     }
 
-    renderFeedbacks(feedbacks);
-    return feedbacks;
+    const middleIndex = Math.floor(all.length / 2);
+    const selected = [all[0], all[middleIndex], all[all.length - 1]];
+
+    renderFeedbacks(selected);
+
+    return selected;
   } catch (err) {
     console.error('Помилка при завантаженні відгуків:', err);
     document.getElementById('feedback-container').innerHTML =
@@ -59,6 +61,7 @@ function renderFeedbacks(feedbacks) {
 
 function initSwiper() {
   new Swiper('.feedback-swiper', {
+    speed: 1000,
     loop: true,
     pagination: {
       el: '.custom-pagination',
