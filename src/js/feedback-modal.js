@@ -6,7 +6,7 @@ const stars = document.querySelectorAll('.modal-feedback-stars');
 const closeBtn = document.querySelector('.modal-feedback-close');
 const backdrop = document.querySelector('.modal-feedback-backdrop');
 const submitBtn = document.querySelector('.modal-feedback-submit');
-const succesMsg = document.querySelector('.succes');
+const successMsg = document.querySelector('.success');
 const failMsg = document.querySelector('.fail');
 const smiley = document.querySelector('.smiley');
 const notificationsWrap = document.querySelector('.notifications');
@@ -33,7 +33,7 @@ export function handleClickStar(event) {
     star.classList.toggle('filled', val <= rating);
   });
 
-  const radionInput = document.getElementById('radio-${rating}');
+  const radionInput = document.getElementById(`radio-${rating}`);
   if (radionInput) {
     radionInput.checked = true;
   }
@@ -45,17 +45,16 @@ export async function handleFormSubmit(e) {
   const currentForm = e.currentTarget;
   const nameInput = currentForm.elements.modalFeedbackName;
   const messageInput = currentForm.elements.modalFeedbackMessage;
-  const stars = currentForm.elements.star;
+  const starsInput = currentForm.elements.star;
+  const selectedRating = Array.from(starsInput).find(
+    input => input.checked
+  )?.value;
+
   const userData = {
     name: nameInput.value.trim(),
     descr: messageInput.value.trim(),
-    rating: Number(stars.value),
+    rating: Number(selectedRating),
   };
-
-  //   if (!userData.name || !userData.descr || !userData.rating) {
-  //     alert('Fill all fields');
-  //     return;
-  //   }
 
   nameInput.classList.remove('input-error');
   nameError.classList.remove('is-onscreen');
@@ -100,12 +99,10 @@ export async function handleFormSubmit(e) {
 
     notificationTimeoutId = setTimeout(() => {
       notificationsWrap.classList.remove('visually-hidden');
-      succesMsg.classList.remove('visually-hidden');
-      succesMsg.classList.add('is-onscreen');
-      smiley.classList.remove('visually-hidden');
-      smiley.classList.remove('normal');
-      smiley.classList.add('is-onscreen');
-      smiley.classList.add('happy');
+      successMsg.classList.remove('visually-hidden');
+      successMsg.classList.add('is-onscreen');
+      smiley.classList.remove('visually-hidden', 'normal');
+      smiley.classList.add('is-onscreen', 'happy');
     }, 1200);
   } catch (error) {
     console.error(error);
@@ -117,15 +114,20 @@ export async function handleFormSubmit(e) {
       smiley.classList.add('is-onscreen');
     }, 1200);
   } finally {
-    formDataWrapper.classList.add('slide-out-elliptic-bottom-bck');
-    submitBtn.classList.add('submited');
-    modalWrapper.classList.add('submited');
+    try {
+      formDataWrapper.classList.add('slide-out-elliptic-bottom-bck');
+      submitBtn.classList.add('submited');
+      modalWrapper.classList.add('submited');
 
-    form.reset();
-    stars.forEach(star => star.classList.remove('filled'));
-    closeModalTimeoutId = setTimeout(() => {
+      form.reset();
+      stars.forEach(star => star.classList.remove('filled'));
+      closeModalTimeoutId = setTimeout(() => {
+        closeModal();
+      }, 5000);
+    } catch (error) {
       closeModal();
-    }, 5500);
+      console.log(error);
+    }
   }
 }
 
@@ -151,8 +153,11 @@ export function openFeedbackModal() {
     notificationTimeoutId = null;
   }
   resetFeedbackModalState();
+
   document.documentElement.style.overflow = 'hidden';
+  document.documentElement.style.scrollbarGutter = 'stable';
   document.body.style.overflow = 'hidden';
+
   modal.classList.toggle('is-open');
   form.addEventListener('submit', handleFormSubmit);
   closeBtn.addEventListener('click', closeModal);
@@ -167,8 +172,13 @@ export function openFeedbackModal() {
 }
 
 export function closeModal() {
+  clearTimers();
+
   document.documentElement.style.overflow = '';
+  document.documentElement.style.scrollbarGutter = '';
   document.body.style.overflow = '';
+  document.body.style.paddingRight = '';
+
   modal.classList.toggle('is-open');
 
   form.removeEventListener('submit', handleFormSubmit);
@@ -184,17 +194,20 @@ export function closeModal() {
 }
 
 function resetFeedbackModalState() {
+  const nameInput = form.elements.modalFeedbackName;
+  const messageInput = form.elements.modalFeedbackMessage;
+
+  clearTimers();
+
   nameError.classList.remove('is-onscreen');
   messageError.classList.remove('is-onscreen');
   ratingError.classList.remove('is-onscreen');
-  const nameInput = form.elements.modalFeedbackName;
-  const messageInput = form.elements.modalFeedbackMessage;
   nameInput.classList.remove('input-error');
   messageInput.classList.remove('input-error');
 
   notificationsWrap.classList.add('visually-hidden');
-  succesMsg.classList.add('visually-hidden');
-  succesMsg.classList.remove('is-onscreen');
+  successMsg.classList.add('visually-hidden');
+  successMsg.classList.remove('is-onscreen');
   failMsg.classList.add('visually-hidden');
   failMsg.classList.remove('is-onscreen');
 
@@ -208,4 +221,11 @@ function resetFeedbackModalState() {
 
   form.reset();
   stars.forEach(star => star.classList.remove('filled', 'hovered'));
+}
+
+function clearTimers() {
+  clearTimeout(closeModalTimeoutId);
+  clearTimeout(notificationTimeoutId);
+  closeModalTimeoutId = null;
+  notificationTimeoutId = null;
 }
