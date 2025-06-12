@@ -1,4 +1,7 @@
 @media screen and (max-width: 768px) {
+  .artists-section {
+    padding: 64px 0;
+  }
   .artists-title {
     font-weight: 600;
     font-size: 16px;
@@ -81,6 +84,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 64px;
+    margin-bottom: 32px;
+
   }
 
   .caret-right-icon {
@@ -106,7 +111,6 @@
     font-size: 18px;
     line-height: 1.5;
     color: #ffffff;
-    margin-top: 64px;
     position: relative;
   }
 
@@ -115,9 +119,7 @@
     align-items: center;
     justify-content: center;
   }
-  .artists-section {
-    margin: 64px 0;
-  }
+
 }
 
 .artists-learn-more-card-btn {
@@ -222,6 +224,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
+    margin-bottom: 32px;
   }
   .artists-load-more-btn {
     display: flex;
@@ -242,7 +245,6 @@
     font-size: 18px;
     line-height: 1.5;
     color: #ffffff;
-    margin-top: 32px;
     position: relative;
   }
   .artists-load-more-btn-wrapper {
@@ -250,13 +252,14 @@
     align-items: center;
     justify-content: center;
   }
-  .artists-section {
-    margin: 64px 0;
-  }
+  
 }
 
 
 @media screen and (min-width: 1440px) {
+  .artists-section {
+    padding: 112px 0;
+  }
   .artists-subtitle {
     display: flex;
     width: 523px;
@@ -281,9 +284,13 @@
     width: 640px;
   }
 
+.artists-list{
+  margin-bottom: 64px;
+}
+
   .artists-load-more-btn {
     padding: 10px 24px;
-    margin-top: 64px;
+    /* margin-top: 64px; */
   }
   .artists-load-more-btn-wrapper {
     align-items: center;
