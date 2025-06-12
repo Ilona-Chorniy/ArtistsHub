@@ -1,8 +1,15 @@
 .hero-section {
-  padding: 64px 0;
+  padding-top: 64px;
   min-width: 320px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #060307, #06030700 20%, #06030700 80%, #060307), #22132B;
+  background: linear-gradient(
+      180deg,
+      #060307,
+      #06030700 20%,
+      #06030700 80%,
+      #060307
+    ),
+    #22132b;
   position: relative;
 }
 
@@ -28,6 +35,7 @@
 }
 
 .hero-title {
+  font-family: 'Epilogue', san-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 1.1;
@@ -101,14 +109,16 @@
   width: 280px;
 }
 
-@media screen and (min-resolution: 192dpi) and (max-width: 767px) {
+main {
+  margin-top: 40px;
+}
+
+@media screen and (min-resolution: 2dppx),
+       screen and (min-resolution: 192dpi),
+       screen and (-webkit-min-device-pixel-ratio: 2) {
   .hero-img {
     background-image: url(/img/hero/mob-hero@2x-min.png);
   }
-}
-
-main {
-  margin-top: 40px;
 }
 
 @media screen and (min-width: 768px) {
@@ -116,11 +126,11 @@ main {
     padding-top: 32px;
     padding-bottom: 0;
   }
-  
+
   main {
     margin-top: 70px;
   }
-  
+
   .hero-title {
     margin-bottom: 24px;
     max-width: 624px;
@@ -150,7 +160,7 @@ main {
   }
 
   .hero-img::after {
-    content: "";
+    content: '';
     position: absolute;
     pointer-events: none;
     left: 0;
@@ -162,7 +172,9 @@ main {
   }
 }
 
-@media screen and (min-resolution: 192dpi) and (min-width: 768px) {
+@media screen and (min-width: 768px) and (min-resolution: 2dppx),
+       screen and (min-width: 768px) and (min-resolution: 192dpi),
+       screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
   .hero-img {
     background-image: url(/img/hero/tab-hero@2x-min.png);
   }
@@ -171,6 +183,7 @@ main {
 @media screen and (min-width: 1440px) {
   .hero-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 30px;
   }
@@ -184,7 +197,7 @@ main {
   }
 
   .hero-content {
-    width: 671px;
+    width: 640px;
     margin-bottom: 0;
     flex-shrink: 0;
   }
@@ -205,7 +218,7 @@ main {
   }
 
   .hero-img::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -217,7 +230,9 @@ main {
   }
 }
 
-@media screen and (min-resolution: 192dpi) and (min-width: 1440px) {
+@media screen and (min-width: 1440px) and (min-resolution: 2dppx),
+       screen and (min-width: 1440px) and (min-resolution: 192dpi),
+       screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2) {
   .hero-img {
     background-image: url(/img/hero/desk-hero@2x-min.png);
   }
