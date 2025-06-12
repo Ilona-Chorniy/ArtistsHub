@@ -7,6 +7,9 @@
   z-index: 100;
 }
 
+.header .container{
+  height: 64px;
+}
 
 .header-inner {
   display: flex;
@@ -47,9 +50,6 @@
   gap: 32px;
 }
 
-/* .nav-item:not(:last-child) {
-  margin-right: 32px;
-} */
 
 .nav-link {
   color: #ffffff;
@@ -94,6 +94,9 @@
   .nav {
     display: block;
   }
+  .header .container{
+  height: 72px;
+}
 
   .burger {
     display: none;

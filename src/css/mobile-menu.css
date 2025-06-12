@@ -98,7 +98,6 @@ body.menu-open {
 
 body.menu-open > *:not(.mobile-menu) {
   position: relative;
-  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
