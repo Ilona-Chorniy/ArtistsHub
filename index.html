@@ -24,7 +24,7 @@
     <script type="module" crossorigin src="/ArtistsHub/index.js"></script>
     <link rel="modulepreload" crossorigin href="/ArtistsHub/assets/vendor-Breb73Hu.js">
     <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/vendor-BZ_WhpHG.css">
-    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/index-OJWLrS4J.css">
+    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/index-C3L_buop.css">
   </head>
   <body>
     <header class="header">
@@ -85,20 +85,22 @@
 </section>
 
       <section id="artists" class="div-section-wrapper">
-  <div class="artists-section container">
-    <h2 class="artists-title">Artists</h2>
-    <h3 class="artists-subtitle">Explore Your New Favorite Artists</h3>
-    <ul class="artists-list"></ul>
-    <div class="artists-load-more-btn-wrapper">
-      <div class="loader-and-btn-wrapper">
-        <span class="loader visually-hidden"></span>
+  <div class="container">
+    <div class="artists-section">
+      <h2 class="artists-title">Artists</h2>
+      <p class="artists-subtitle">Explore Your New Favorite Artists</p>
+      <ul class="artists-list"></ul>
+      <div class="artists-load-more-btn-wrapper">
+        <div class="loader-and-btn-wrapper">
+          <span class="loader visually-hidden"></span>
+        </div>
+        <button class="artists-load-more-btn">
+          Load More
+          <svg class="scroll-down-icon" width="24" height="24" fill="#ffffff">
+            <use href="/ArtistsHub/assets/artists-DQa-t8MH.svg#icon-down-arrow-alt"></use>
+          </svg>
+        </button>
       </div>
-      <button class="artists-load-more-btn">
-        Load More
-        <svg class="scroll-down-icon" width="24" height="24" fill="#ffffff">
-          <use href="/ArtistsHub/assets/artists-DQa-t8MH.svg#icon-down-arrow-alt"></use>
-        </svg>
-      </button>
     </div>
   </div>
 </section>
@@ -221,13 +223,9 @@
     <section class="artist-card">
       <h2 id="artistModalTitle" class="artist-name"></h2>
       <div class="artist-container">
-        <div class="artist-card__header">
-          <img
-            src="https://via.placeholder.com/200x200?text=No+Image"
-            alt="Artist photo"
-            class="artist-thumb"
-          />
-        </div>
+       <div class="artist-card__header">
+          <img src="#{artistImage}" alt="Artist photo" class="artist-thumb" />
+        </div> 
         <ul class="artist-card__info-list">
           <li class="info-item artist-card__info-years-active">
             <h4 class="artist-card__label">Years active:</h4>
