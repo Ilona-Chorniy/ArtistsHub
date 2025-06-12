@@ -49,15 +49,13 @@
 }
 
 .feedback-card {
-  background-color: #060307;
-  border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 608px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
+  gap: 32px;
+  padding-bottom: 24px;
+  padding-top: 24px;
 }
 
 /* Stars-rating */
@@ -167,6 +165,27 @@
   justify-content: center;
   border-radius: 12px;
   padding: 10px 24px;
+  width: 100%;
+.feedback-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #585757;
+  opacity: 0.5;
+  margin: 0 6px;
+}
+
+.feedback-swiper .swiper-pagination-bullet-active {
+  background-color: #fbfbfb;
+  opacity: 1;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 10px 24px;
   width: 288px;
   height: 47px;
   background-color: #764191;
@@ -232,14 +251,6 @@
     padding: 10px 14px;
     width: 158px;
     height: 47px;
-  }
-
-  .btn-txt {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-    color: #fbfbfb;
   }
 }
 

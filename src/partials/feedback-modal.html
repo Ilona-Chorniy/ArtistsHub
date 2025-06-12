@@ -1,146 +1,144 @@
-  <div class="modal-feedback-backdrop">
-    <div class="container modal-feedback-wrapper">
-      <div class="notifications visually-hidden">
-        <span class="succes visually-hidden"
-          >Thank you for your feedback!
-        </span>
-        <span class="fail visually-hidden"
-          >Failed to send feedback. Please try again later</span
-        >
-        <div class="smiley normal visually-hidden">
-          <div class="eyes">
-            <div class="eye"></div>
-            <div class="eye"></div>
-          </div>
-          <div class="mouth"></div>
+<div class="modal-feedback-backdrop">
+  <div class="container modal-feedback-wrapper">
+    <div class="notifications visually-hidden">
+      <span class="success visually-hidden">Thank you for your feedback! </span>
+      <span class="fail visually-hidden"
+        >Failed to send feedback. Please try again later</span
+      >
+      <div class="smiley normal visually-hidden">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
         </div>
+        <div class="mouth"></div>
       </div>
-      <div class="data-wrapper">
-        <button class="modal-feedback-close" type="button">
-          <svg class="modal-close-icon" width="14" height="14">
-            <use href="/img/modal-feedback.svg#close"></use>
-          </svg>
-        </button>
-        <form id="modal-feedback" class="modal-feedback-form">
-          <h2 class="modal-feedback-heading">Submit feedback</h2>
-          <div class="modal-input-wrapper name-input-wrapper">
-            <label class="modal-feedback-label" for="modal-feedback-name"
-              >Name</label
-            >
-            <div class="input-wrapper">
-              <input
-                class="modal-feedback-input name-input"
-                id="modal-feedback-name"
-                name="modalFeedbackName"
-                type="text"
-                placeholder="Emily"
-              >
-              <span class="input-text-error name-error"
-                >Name must be between 2 and 16 characters.</span
-              >
-            </div>
-          </div>
-          <div class="modal-input-wrapper message-input-wrapper">
-            <label class="modal-feedback-label" for="modal-feedback-message"
-              >Message</label
-            >
-            <div class="input-wrapper">
-              <textarea
-                class="modal-feedback-input message-input"
-                id="modal-feedback-message"
-                name="modalFeedbackMessage"
-                placeholder="Type your message..."
-                rows="4"
-              ></textarea>
-              <span class="input-text-error message-error"
-                >Message must be between 10 and 512 characters.</span
-              >
-            </div>
-          </div>
-          <div class="stars-wrapper">
-            <span class="radio-wrapper" id="star-1"
-              ><input
-                class="star-radio visually-hidden"
-                id="radio-1"
-                type="radio"
-                name="star"
-                value="1"><label for="radio-1"
-                ><svg
-                  class="modal-feedback-stars star1"
-                  width="30"
-                  height="30"
-                  data-value="1"
-                >
-                  <use href="/img/modal-feedback.svg#star"></use></svg></label
-            ></span>
-            <span class="radio-wrapper" id="star-2"
-              ><input
-                class="star-radio visually-hidden"
-                id="radio-2"
-                type="radio"
-                name="star"
-                value="2"><label for="radio-2"
-                ><svg
-                  class="modal-feedback-stars star2"
-                  width="30"
-                  height="30"
-                  data-value="2"
-                >
-                  <use href="/img/modal-feedback.svg#star"></use></svg></label
-            ></span>
-            <span class="radio-wrapper" id="star-3"
-              ><input
-                class="star-radio visually-hidden"
-                id="radio-3"
-                type="radio"
-                name="star"
-                value="3"><label for="radio-3"
-                ><svg
-                  class="modal-feedback-stars star3"
-                  width="30"
-                  height="30"
-                  data-value="3"
-                >
-                  <use href="/img/modal-feedback.svg#star"></use></svg></label
-            ></span>
-            <span class="radio-wrapper" id="star-4"
-              ><input
-                class="star-radio visually-hidden"
-                id="radio-4"
-                type="radio"
-                name="star"
-                value="4"><label for="radio-4"
-                ><svg
-                  class="modal-feedback-stars star4"
-                  width="30"
-                  height="30"
-                  data-value="4"
-                >
-                  <use href="/img/modal-feedback.svg#star"></use></svg></label
-            ></span>
-            <span class="radio-wrapper" id="star-5"
-              ><input
-                class="star-radio visually-hidden"
-                id="radio-5"
-                type="radio"
-                name="star"
-                value="5"><label for="radio-5"
-                ><svg
-                  class="modal-feedback-stars star5"
-                  width="30"
-                  height="30"
-                  data-value="5"
-                >
-                  <use href="/img/modal-feedback.svg#star"></use></svg></label
-            ></span>
-            <span class="input-text-error rating-error"
-              >Please select a rating</span
-            >
-          </div>
-        </form>
-      </div>
-      <button form="modal-feedback" class="modal-feedback-submit" type="submit">
-        Submit
-      </button>
     </div>
+    <button class="modal-feedback-close" type="button">
+      <svg class="modal-close-icon" width="14" height="14">
+        <use href="/img/modal-feedback.svg#close"></use>
+      </svg>
+    </button>
+    <div class="data-wrapper">
+      <form id="modal-feedback" class="modal-feedback-form">
+        <h2 class="modal-feedback-heading">Submit feedback</h2>
+        <div class="modal-input-wrapper name-input-wrapper">
+          <label class="modal-feedback-label" for="modal-feedback-name"
+            >Name</label
+          >
+          <div class="input-wrapper">
+            <input
+              class="modal-feedback-input name-input"
+              id="modal-feedback-name"
+              name="modalFeedbackName"
+              type="text"
+              placeholder="Emily"
+            />
+            <span class="input-text-error name-error"
+              >Name must be between 2 and 16 characters.</span
+            >
+          </div>
+        </div>
+        <div class="modal-input-wrapper message-input-wrapper">
+          <label class="modal-feedback-label" for="modal-feedback-message"
+            >Message</label
+          >
+          <div class="input-wrapper">
+            <textarea
+              class="modal-feedback-input message-input"
+              id="modal-feedback-message"
+              name="modalFeedbackMessage"
+              placeholder="Type your message..."
+              rows="4"
+            ></textarea>
+            <span class="input-text-error message-error"
+              >Message must be between 10 and 512 characters.</span
+            >
+          </div>
+        </div>
+        <div class="stars-wrapper">
+          <span class="radio-wrapper" id="star-1"
+            ><input
+              class="star-radio visually-hidden"
+              id="radio-1"
+              type="radio"
+              name="star"
+              value="1" /><label for="radio-1"
+              ><svg
+                class="modal-feedback-stars star1"
+                width="30"
+                height="30"
+                data-value="1"
+              >
+                <use href="/img/modal-feedback.svg#star"></use></svg></label
+          ></span>
+          <span class="radio-wrapper" id="star-2"
+            ><input
+              class="star-radio visually-hidden"
+              id="radio-2"
+              type="radio"
+              name="star"
+              value="2" /><label for="radio-2"
+              ><svg
+                class="modal-feedback-stars star2"
+                width="30"
+                height="30"
+                data-value="2"
+              >
+                <use href="/img/modal-feedback.svg#star"></use></svg></label
+          ></span>
+          <span class="radio-wrapper" id="star-3"
+            ><input
+              class="star-radio visually-hidden"
+              id="radio-3"
+              type="radio"
+              name="star"
+              value="3" /><label for="radio-3"
+              ><svg
+                class="modal-feedback-stars star3"
+                width="30"
+                height="30"
+                data-value="3"
+              >
+                <use href="/img/modal-feedback.svg#star"></use></svg></label
+          ></span>
+          <span class="radio-wrapper" id="star-4"
+            ><input
+              class="star-radio visually-hidden"
+              id="radio-4"
+              type="radio"
+              name="star"
+              value="4" /><label for="radio-4"
+              ><svg
+                class="modal-feedback-stars star4"
+                width="30"
+                height="30"
+                data-value="4"
+              >
+                <use href="/img/modal-feedback.svg#star"></use></svg></label
+          ></span>
+          <span class="radio-wrapper" id="star-5"
+            ><input
+              class="star-radio visually-hidden"
+              id="radio-5"
+              type="radio"
+              name="star"
+              value="5" /><label for="radio-5"
+              ><svg
+                class="modal-feedback-stars star5"
+                width="30"
+                height="30"
+                data-value="5"
+              >
+                <use href="/img/modal-feedback.svg#star"></use></svg></label
+          ></span>
+          <span class="input-text-error rating-error"
+            >Please select a rating</span
+          >
+        </div>
+      </form>
+    </div>
+    <button form="modal-feedback" class="modal-feedback-submit" type="submit">
+      Submit
+    </button>
   </div>
+</div>
