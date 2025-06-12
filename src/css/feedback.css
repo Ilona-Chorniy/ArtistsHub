@@ -17,7 +17,8 @@
   max-width: 704px;
   min-height: 253px;
   margin: 0 auto;
-  padding: 64px 16px;
+  padding-top: 64px;
+  padding-bottom: 64px;
   overflow: hidden;
 }
 
@@ -142,10 +143,6 @@
   left: 0;
 }
 
-.swiper-button-next {
-  right: 0;
-}
-
 .swiper-button-prev .arrow,
 .swiper-button-next .arrow {
   display: block;
@@ -194,7 +191,6 @@
 @media screen and (min-width: 768px) {
   .feedback-section {
     max-width: 1312px;
-    padding: 64px 32px;
   }
 
   .swiper-button-prev,
@@ -205,7 +201,6 @@
     width: 48px !important;
     height: 48px !important;
     background-color: #060307;
-
     border-radius: 8px;
     position: absolute;
     top: 30%;
@@ -250,7 +245,8 @@
 @media screen and (min-width: 1440px) {
   .feedback-section {
     width: 1312px;
-    padding: 112px 64px 239px;
+    padding-top: 112px;
+    padding-bottom: 112px;
   }
 
   .btn {
