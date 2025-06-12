@@ -45,17 +45,12 @@ export async function handleFormSubmit(e) {
   const currentForm = e.currentTarget;
   const nameInput = currentForm.elements.modalFeedbackName;
   const messageInput = currentForm.elements.modalFeedbackMessage;
-  const stars = currentForm.elements.star;
+  const starsInput = currentForm.elements.star;
   const userData = {
     name: nameInput.value.trim(),
     descr: messageInput.value.trim(),
-    rating: Number(stars.value),
+    rating: Number(starsInput.value),
   };
-
-  //   if (!userData.name || !userData.descr || !userData.rating) {
-  //     alert('Fill all fields');
-  //     return;
-  //   }
 
   nameInput.classList.remove('input-error');
   nameError.classList.remove('is-onscreen');
@@ -122,7 +117,7 @@ export async function handleFormSubmit(e) {
     modalWrapper.classList.add('submited');
 
     form.reset();
-    stars.forEach(star => star.classList.remove('filled'));
+    starsInput.forEach(star => star.classList.remove('filled'));
     closeModalTimeoutId = setTimeout(() => {
       closeModal();
     }, 5500);
@@ -184,11 +179,12 @@ export function closeModal() {
 }
 
 function resetFeedbackModalState() {
+  const nameInput = form.elements.modalFeedbackName;
+  const messageInput = form.elements.modalFeedbackMessage;
+
   nameError.classList.remove('is-onscreen');
   messageError.classList.remove('is-onscreen');
   ratingError.classList.remove('is-onscreen');
-  const nameInput = form.elements.modalFeedbackName;
-  const messageInput = form.elements.modalFeedbackMessage;
   nameInput.classList.remove('input-error');
   messageInput.classList.remove('input-error');
 

@@ -12,9 +12,13 @@
   opacity: 0;
   visibility: hidden;
 
+  background-color: rgba(0, 0, 0, 0.8);
+
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: opacity, visibility;
   transition-delay: 200ms;
+
+  z-index: 999;
 }
 
 .modal-feedback-backdrop.is-open {
@@ -220,10 +224,6 @@ label:hover .modal-feedback-stars {
 }
 
 @media only screen and (min-width: 768px) {
-  .modal-feedback-backdrop {
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-
   .modal-feedback-wrapper {
     width: 704px;
     padding: 64px 32px;
@@ -343,6 +343,7 @@ label:hover .modal-feedback-stars {
 }
 
 .smiley {
+  margin-top: 250px;
   display: block;
   background: linear-gradient(
     135deg,
