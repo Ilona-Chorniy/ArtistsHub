@@ -14,34 +14,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 704px;
-  min-height: 253px;
   margin: 0 auto;
-  padding: 64px 16px;
-  overflow: hidden;
+  padding: 64px 0;
+  /* overflow: hidden; */
 }
 
 .feedback-container {
   cursor: pointer;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  background-color: #060307;
-  z-index: 0;
 }
 
 .swiper {
   width: 100%;
   height: 100%;
   position: relative;
-}
-
-.swiper-wrapper {
+  display: flex;
   margin-bottom: 16px;
 }
 
 .swiper-wrapper {
   display: flex;
+  gap: 8px;
 }
 
 .swiper-slide {
@@ -53,15 +45,13 @@
 }
 
 .feedback-card {
-  background-color: #060307;
-  border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 608px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
+  gap: 32px;
+  padding-bottom: 24px;
+  padding-top: 24px;
 }
 
 /* Stars-rating */
@@ -114,8 +104,6 @@
   line-height: 140%;
   letter-spacing: -0.01em;
   text-align: center;
-  margin: 32px;
-  color: #fbfbfb;
 }
 
 .feedback-author {
@@ -156,7 +144,9 @@
 }
 
 /* === Pagination === */
+
 .swiper-pagination-bullet {
+  bottom: 16px !important;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -176,11 +166,18 @@
   justify-content: center;
   border-radius: 12px;
   padding: 10px 24px;
-  width: 288px;
+  width: 100%;
   height: 47px;
   background-color: #764191;
   border: none;
-  margin-top: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #5f347b;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-txt {
@@ -192,9 +189,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .feedback-section {
-    max-width: 1312px;
-    padding: 64px 32px;
+  .feedback-text {
+    max-width: 518px;
   }
 
   .swiper-button-prev,
@@ -237,20 +233,15 @@
     width: 158px;
     height: 47px;
   }
-
-  .btn-txt {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-    color: #fbfbfb;
-  }
 }
 
 @media screen and (min-width: 1440px) {
-  .feedback-section {
-    width: 1312px;
-    padding: 112px 64px 239px;
+  .feedback-text {
+    max-width: 768px;
+  }
+
+  .feedback-swiper {
+    margin-bottom: 80px;
   }
 
   .btn {
@@ -258,6 +249,5 @@
     padding: 10px 24px;
     width: 177px;
     height: 47px;
-    margin-top: 80px;
   }
 }
