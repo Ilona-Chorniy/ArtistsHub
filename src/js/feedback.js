@@ -14,7 +14,7 @@ async function loadFeedbacks() {
   try {
     const response = await axios.get(
       'https://sound-wave.b.goit.study/api/feedbacks',
-      { params: { limit: 3, page: 1 } }
+      { params: { limit: 5, page: 1 } }
     );
     const feedbacks = Array.isArray(response.data)
       ? response.data
