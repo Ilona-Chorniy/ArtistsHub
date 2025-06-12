@@ -7,7 +7,7 @@
   z-index: 100;
 }
 
-.header .container{
+.header .container {
   height: 64px;
 }
 
@@ -49,7 +49,6 @@
   padding: 0;
   gap: 32px;
 }
-
 
 .nav-link {
   color: #ffffff;
@@ -94,25 +93,28 @@
   .nav {
     display: block;
   }
-  .header .container{
-  height: 72px;
-}
+  .header .container {
+    height: 72px;
+  }
 
   .burger {
     display: none;
   }
 
   .header-inner {
-    padding: 24px 0;
-    
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
   }
-
-  .header .container{
+  .nav-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .header .container {
     padding-left: 64px;
     padding-right: 64px;
   }
-  
-  .header .container{
+
+  .header .container {
     padding-left: 64px;
     padding-right: 64px;
   }
@@ -127,7 +129,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-
   .logo svg {
     width: 119px;
     height: 51px;
