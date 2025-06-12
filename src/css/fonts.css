@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: local('IBMPlexSans-Regular'),
+    /* url('IBMPlexSans-Regular'),.woff2') format('woff2'),
+    url('IBMPlexSans-Regular'),.woff') format('woff'), */
+      url('../fonts/IBMPlexSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: local('IBMPlexSans-Medium'),
+    /* url('IBMPlexSans-Medium.woff2') format('woff2'),
+    url('IBMPlexSans-Medium.woff') format('woff'), */
+      url('../fonts/IBMPlexSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: local('IBMPlexSans-Bold'),
+    /* url('IBMPlexSans-Bold.woff2') format('woff2'),
+    url('IBMPlexSans-Bold.woff') format('woff'), */
+      url('../fonts/IBMPlexSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue-Regular'),
+    /* url('Epilogue-Regular'),.woff2') format('woff2'),
+    url('Epilogue-Regular'),.woff') format('woff'), */
+      url('../fonts/Epilogue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue-Medium'),
+    /* url('Epilogue-Medium.woff2') format('woff2'),
+    url('Epilogue-Medium.woff') format('woff'), */
+      url('../fonts/Epilogue-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue-Bold'),
+    /* url('Epilogue--Bold.woff2') format('woff2'),
+    url('Epilogue--Bold.woff') format('woff'), */
+      url('../fonts/Epilogue-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
