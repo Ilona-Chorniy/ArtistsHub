@@ -3,6 +3,7 @@ import { domRefs } from './artistModal/domRefs.js';
 import {
   closeModal,
   initCloseModalListeners,
+  handleEscDownModal,
 } from './artistModal/closeModal.js';
 import { fetchArtistData } from './artistModal/fetchArtistData.js';
 import { renderArtistInfo } from './artistModal/renderArtistInfo.js';
@@ -66,3 +67,4 @@ function clearModalContent() {
 
 // Initialize close modal listeners
 initCloseModalListeners();
+// document.removeEventListener('keydown', handleEscDownModal);

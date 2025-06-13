@@ -6,8 +6,8 @@ function closeModal() {
 }
 
 function initCloseModalListeners() {
-  const closeButton = document.querySelector('.modal__close-button');
-  const overlay = document.querySelector('.modal');
+  const closeButton = domRefs.closeButton;
+  const overlay = domRefs.overlay;
 
   if (closeButton) {
     closeButton.addEventListener('click', closeModal);
@@ -20,10 +20,9 @@ function initCloseModalListeners() {
     });
   }
 
+  // document.addEventListener('keydown', handleEscDownModal);
   document.addEventListener('keydown', handleEscDownModal);
-
-  //!!! Сашко, додай туди, де модалка закривається ↓
-  document.removeEventListener('keydown', handleEscDownModal);
+  //
 }
 
 function handleEscDownModal(e) {
@@ -35,4 +34,4 @@ function handleEscDownModal(e) {
   }
 }
 
-export { closeModal, initCloseModalListeners };
+export { closeModal, initCloseModalListeners, handleEscDownModal };
