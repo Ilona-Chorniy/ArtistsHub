@@ -3,7 +3,7 @@ export const domRefs = {
   // link to loader and spinner
   artistDataLoader: document.getElementById('artistDataLoader'),
   artistDataSpinner: document.querySelector('#artistDataLoader .spinner'),
-  closeButton: document.querySelector('.modal__close-button'),
+  closeBtn: document.querySelector('.modal__close-btn'),
   overlay: document.querySelector('.modal'),
 
   artist: {

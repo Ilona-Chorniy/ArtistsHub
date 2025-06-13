@@ -1,37 +1,51 @@
+// closeModal.js
 import { domRefs } from './domRefs.js';
+
+let handleEscape;
+let handleOverlayClick;
+let handleCloseClick;
 
 function closeModal() {
   domRefs.modal.classList.add('modal--hidden');
   document.body.classList.remove('no-scroll');
+
+  // ❌ Прибираємо слухачі
+  document.removeEventListener('keydown', handleEscape);
+  domRefs.modal.removeEventListener('click', handleOverlayClick);
+
+  const closeButton = document.querySelector('.modal__close-button');
+  if (closeButton) {
+    closeButton.removeEventListener('click', handleCloseClick);
+  }
 }
 
 function initCloseModalListeners() {
-  const closeButton = domRefs.closeButton;
-  const overlay = domRefs.overlay;
+  const closeButton = document.querySelector('.modal__close-button');
+  handleEscape = event => {
+    if (
+      event.key === 'Escape' &&
+      !domRefs.modal.classList.contains('modal--hidden')
+    ) {
+      closeModal();
+    }
+  };
+
+  handleOverlayClick = event => {
+    if (event.target === domRefs.modal) {
+      closeModal();
+    }
+  };
+
+  handleCloseClick = () => {
+    closeModal();
+  };
 
   if (closeButton) {
-    closeButton.addEventListener('click', closeModal);
-  }
-  if (overlay) {
-    overlay.addEventListener('click', event => {
-      if (event.target === overlay) {
-        closeModal();
-      }
-    });
+    closeButton.addEventListener('click', handleCloseClick);
   }
 
-  // document.addEventListener('keydown', handleEscDownModal);
-  document.addEventListener('keydown', handleEscDownModal);
-  //
+  domRefs.modal.addEventListener('click', handleOverlayClick);
+  document.addEventListener('keydown', handleEscape);
 }
 
-function handleEscDownModal(e) {
-  if (
-    e.key === 'Escape' &&
-    !domRefs.modal.classList.contains('modal--hidden')
-  ) {
-    closeModal();
-  }
-}
-
-export { closeModal, initCloseModalListeners, handleEscDownModal };
+export { closeModal, initCloseModalListeners };

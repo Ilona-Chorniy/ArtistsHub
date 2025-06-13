@@ -3,7 +3,7 @@ import { domRefs } from './artistModal/domRefs.js';
 import {
   closeModal,
   initCloseModalListeners,
-  handleEscDownModal,
+  // handleEscDownModal,
 } from './artistModal/closeModal.js';
 import { fetchArtistData } from './artistModal/fetchArtistData.js';
 import { renderArtistInfo } from './artistModal/renderArtistInfo.js';
@@ -23,6 +23,9 @@ export async function openModal(artistId) {
     // Show the modal
     domRefs.modal.classList.remove('modal--hidden');
     document.body.classList.add('no-scroll');
+
+    // Initialize close modal listeners
+    initCloseModalListeners();
 
     // Show the loader after a delay
     loaderTimerId = setTimeout(() => {
@@ -65,6 +68,4 @@ function clearModalContent() {
   if (domRefs.artistInfoContainer) domRefs.artistInfoContainer.innerHTML = '';
 }
 
-// Initialize close modal listeners
-initCloseModalListeners();
 // document.removeEventListener('keydown', handleEscDownModal);
