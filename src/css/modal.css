@@ -9,14 +9,15 @@ h4 {
 .modal {
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 52px;
   padding-bottom: 52px;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(112, 112, 112, 0.8);
   overflow: hidden;
   z-index: 1000;
 }
@@ -55,8 +56,10 @@ h4 {
 .modal__content {
   position: relative;
   display: flex;
+  overflow-y: auto;
   background-color: #060307;
   padding: 52px 8px;
+  margin-top: 35px;
   max-width: 288px;
   border-radius: 16px;
   overflow: scroll;
