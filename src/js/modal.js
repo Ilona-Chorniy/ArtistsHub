@@ -3,6 +3,7 @@ import { domRefs } from './artistModal/domRefs.js';
 import {
   closeModal,
   initCloseModalListeners,
+  handleEscDownModal,
 } from './artistModal/closeModal.js';
 import { fetchArtistData } from './artistModal/fetchArtistData.js';
 import { renderArtistInfo } from './artistModal/renderArtistInfo.js';
@@ -21,10 +22,13 @@ export async function openModal(artistId) {
   try {
     // Show the modal
     domRefs.modal.classList.remove('modal--hidden');
-    document.body.classList.add('no-scroll');
+    // document.body.classList.add('no-scroll');
+    document.addEventListener('keydown', handleEscDownModal);
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
     // Show the loader after a delay
-    loaderTimerId = setTimeout(() => {
+    document.body.loaderTimerId = setTimeout(() => {
       loader.showArtistLoader();
     }, LOADER_DELAY_MS);
 

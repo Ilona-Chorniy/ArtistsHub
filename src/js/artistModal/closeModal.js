@@ -3,6 +3,8 @@ import { domRefs } from './domRefs.js';
 function closeModal() {
   domRefs.modal.classList.add('modal--hidden');
   document.body.classList.remove('no-scroll');
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
 }
 
 function initCloseModalListeners() {
@@ -20,9 +22,6 @@ function initCloseModalListeners() {
     });
   }
 
-  document.addEventListener('keydown', handleEscDownModal);
-
-  //!!! Сашко, додай туди, де модалка закривається ↓
   document.removeEventListener('keydown', handleEscDownModal);
 }
 
@@ -35,4 +34,4 @@ function handleEscDownModal(e) {
   }
 }
 
-export { closeModal, initCloseModalListeners };
+export { closeModal, initCloseModalListeners, handleEscDownModal };
