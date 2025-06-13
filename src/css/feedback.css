@@ -128,11 +128,9 @@
   position: static !important;
   margin-top: 16px !important;
 }
-
 .feedback-swiper {
   padding-bottom: 0;
 }
-
 .feedback-swiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -229,11 +227,9 @@
     width: 177px;
     height: 47px;
   }
-
   .feedback-swiper .custom-pagination {
     position: static !important;
     margin-top: 80px !important;
     margin-bottom: 80px;
   }
-}
 }
