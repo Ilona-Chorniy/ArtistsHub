@@ -20,14 +20,19 @@ function initCloseModalListeners() {
     });
   }
 
-  document.addEventListener('keydown', event => {
-    if (
-      event.key === 'Escape' &&
-      !domRefs.modal.classList.contains('modal--hidden')
-    ) {
-      closeModal();
-    }
-  });
+  document.addEventListener('keydown', handleEscDownModal);
+
+  //!!! Сашко, додай туди, де модалка закривається ↓
+  document.removeEventListener('keydown', handleEscDownModal);
+}
+
+function handleEscDownModal(e) {
+  if (
+    e.key === 'Escape' &&
+    !domRefs.modal.classList.contains('modal--hidden')
+  ) {
+    closeModal();
+  }
 }
 
 export { closeModal, initCloseModalListeners };
