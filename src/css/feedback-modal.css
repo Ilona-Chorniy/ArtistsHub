@@ -12,7 +12,7 @@
   opacity: 0;
   visibility: hidden;
 
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(112, 112, 112, 0.8);
 
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: opacity, visibility;
@@ -38,7 +38,7 @@
   padding: 64px 16px;
   min-width: 320px;
   max-width: 704px;
-  height: 100vh;
+  height: 95vh;
   margin: 0 auto;
   background-color: #060307;
 
@@ -93,6 +93,7 @@
 
 .success,
 .fail {
+  font-weight: 600;
   font-size: 22px;
   margin-top: 80px;
   display: block;
