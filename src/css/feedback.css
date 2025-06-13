@@ -127,6 +127,7 @@
 .feedback-swiper .custom-pagination {
   position: static !important;
   margin-top: 16px !important;
+  margin-bottom: 16px !important;
 }
 .feedback-swiper {
   padding-bottom: 0;
