@@ -9,9 +9,12 @@
 
 .header .container {
   height: 64px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-inner {
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;

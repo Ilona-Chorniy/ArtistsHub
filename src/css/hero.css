@@ -113,9 +113,7 @@ main {
   margin-top: 40px;
 }
 
-@media screen and (min-resolution: 2dppx),
-       screen and (min-resolution: 192dpi),
-       screen and (-webkit-min-device-pixel-ratio: 2) {
+@media (min-resolution: 192dpi) and (max-width: 767px){
   .hero-img {
     background-image: url(/img/hero/mob-hero@2x-min.png);
   }
@@ -172,9 +170,7 @@ main {
   }
 }
 
-@media screen and (min-width: 768px) and (min-resolution: 2dppx),
-       screen and (min-width: 768px) and (min-resolution: 192dpi),
-       screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (min-resolution: 192dpi) and (min-width: 768px) {
   .hero-img {
     background-image: url(/img/hero/tab-hero@2x-min.png);
   }
@@ -230,9 +226,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1440px) and (min-resolution: 2dppx),
-       screen and (min-width: 1440px) and (min-resolution: 192dpi),
-       screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (min-resolution: 192dpi) and (min-width: 1440px) {
   .hero-img {
     background-image: url(/img/hero/desk-hero@2x-min.png);
   }
