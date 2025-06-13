@@ -14,19 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 704px;
-  min-height: 253px;
+  justify-content: center;
   margin: 0 auto;
   padding-top: 64px;
   padding-bottom: 64px;
   overflow: hidden;
-}
-
-.feedback-container {
-  cursor: pointer;
-  width: 100%;
-  z-index: 0;
-  margin-bottom: 16px;
 }
 
 .swiper {
@@ -35,17 +27,19 @@
   position: relative;
 }
 
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .swiper-wrapper {
   display: flex;
-  margin-bottom: 16px;
+  align-items: center;
 }
 
 .swiper-slide {
-  display: flex !important;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
 }
 
 .feedback-card {
@@ -54,10 +48,8 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 608px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 16px;
+  margin: 0 auto;
 }
 
 /* Stars-rating */
@@ -105,6 +97,7 @@
 /* Feedback */
 .feedback-text {
   font-family: var(--second-family);
+  max-width: 518px;
   font-weight: 700;
   font-size: 18px;
   line-height: 140%;
@@ -119,6 +112,7 @@
   font-size: 18px;
   line-height: 150%;
   color: #fbfbfb;
+  margin-bottom: 16px;
 }
 
 /* === Swiper Arrows === */
@@ -133,10 +127,6 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.swiper-button-prev {
-  left: 0;
-}
-
 .swiper-button-prev .arrow,
 .swiper-button-next .arrow {
   display: block;
@@ -147,6 +137,10 @@
 }
 
 /* === Pagination === */
+/* .swiper-pagination .custom-pagination {
+  margin-bottom: 16px;
+} */
+
 .feedback-swiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -171,6 +165,8 @@
   height: 47px;
   background-color: #764191;
   border: none;
+  margin-top: 16px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -190,10 +186,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .feedback-section {
-    max-width: 1312px;
-  }
-
   .feedback-swiper .swiper-button-prev,
   .feedback-swiper .swiper-button-next {
     display: flex;
@@ -216,6 +208,7 @@
     padding: 12px;
     width: 48px;
     height: 48px;
+    cursor: pointer;
   }
 
   .swiper-button-prev .arrow,
@@ -245,13 +238,8 @@
 
 @media screen and (min-width: 1440px) {
   .feedback-section {
-    width: 1312px;
     padding-top: 112px;
     padding-bottom: 112px;
-  }
-
-  .feedback-container {
-    margin-bottom: 80px;
   }
 
   .btn {
