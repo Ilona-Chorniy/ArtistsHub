@@ -20,43 +20,40 @@ export async function openModal(artistId) {
   //  Show the loader
 
   try {
-    // Show the modal
+    loader.showArtistLoader();
+
+    const artistData = await fetchArtistData(artistId);
+    const genres = artistData.genres || [];
+    console.log('🧪 genres container:', domRefs.artist.genres);
+
+    clearModalContent();
+    renderArtistInfo(artistData);
+    renderAlbums(artistData.tracksList, artistData.strArtist);
+    renderGenres(domRefs.artist.genres, genres);
+
+    loader.hideArtistLoader();
+
     domRefs.modal.classList.remove('modal--hidden');
     // document.body.classList.add('no-scroll');
-    document.addEventListener('keydown', handleEscDownModal);
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
 
-    // Show the loader after a delay
-    document.body.loaderTimerId = setTimeout(() => {
-      loader.showArtistLoader();
-    }, LOADER_DELAY_MS);
-
-    // Get artist data
-    const artistData = await fetchArtistData(artistId);
-    loader.showArtistLoader();
-    // Clear old content
-    clearModalContent();
-
-    // Render artist data
-    renderArtistInfo(artistData);
-    renderAlbums(artistData.tracksList, artistData.strArtist);
-
-    // Render artist info
-    const genres = artistData.genres || [];
-    console.log('🧪 genres container:', domRefs.artist.genres);
-    renderGenres(domRefs.artist.genres, genres);
+    document.addEventListener('keydown', handleEscDownModal);
+    // document.body.loaderTimerId = setTimeout(() => {
+    //   loader.showArtistLoader();
+    // }, LOADER_DELAY_MS);
   } catch (error) {
     console.error('Error to load artist data:', error.message, error);
+    loader.hideArtistLoader();
     alert('Artist data not found');
     closeModal();
   } finally {
-    if (loaderTimerId) {
-      clearTimeout(loaderTimerId);
-      loaderTimerId = null;
-    }
+    // if (loaderTimerId) {
+    //   clearTimeout(loaderTimerId);
+    //   loaderTimerId = null;
+    // }
     // Hide the loader
-    loader.hideArtistLoader();
+    // loader.hideArtistLoader();
   }
 }
 

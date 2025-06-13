@@ -366,3 +366,20 @@ h4 {
     width: calc((100% - 96px) / 4);
   }
 }
+
+.global-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(112, 112, 112, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.global-loader.hidden {
+  display: none;
+}

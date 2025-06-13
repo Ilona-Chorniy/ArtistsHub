@@ -6,6 +6,7 @@ function showArtistLoader() {
     console.error('DOM references for loader are not found!');
     return;
   }
+  document.querySelector('#globalLoader').classList.remove('hidden');
   domRefs.artistDataLoader.classList.remove('loader-hidden');
   domRefs.artistDataLoader.classList.add('loader-visible');
   domRefs.artistCardSection.classList.add('hidden');
@@ -16,6 +17,7 @@ function hideArtistLoader() {
     console.error('DOM references for loader are not found!');
     return;
   }
+  document.querySelector('#globalLoader').classList.add('hidden');
   domRefs.artistDataLoader.classList.remove('loader-visible');
   domRefs.artistDataLoader.classList.add('loader-hidden');
   domRefs.artistCardSection.classList.remove('hidden');

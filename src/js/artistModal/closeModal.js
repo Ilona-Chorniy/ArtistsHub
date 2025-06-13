@@ -5,6 +5,7 @@ function closeModal() {
   document.body.classList.remove('no-scroll');
   document.body.style.overflow = '';
   document.documentElement.style.overflow = '';
+  document.removeEventListener('keydown', handleEscDownModal);
 }
 
 function initCloseModalListeners() {
@@ -21,8 +22,6 @@ function initCloseModalListeners() {
       }
     });
   }
-
-  document.removeEventListener('keydown', handleEscDownModal);
 }
 
 function handleEscDownModal(e) {
