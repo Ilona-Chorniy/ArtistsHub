@@ -159,27 +159,7 @@
   opacity: 1;
 }
 
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  padding: 10px 24px;
-  width: 100%;};
-.feedback-swiper .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #585757;
-  opacity: 0.5;
-  margin: 0 6px;
-}
-
-.feedback-swiper .swiper-pagination-bullet-active {
-  background-color: #fbfbfb;
-  opacity: 1;
-}
-
+/* === Button Styles === */
 .btn {
   display: flex;
   align-items: center;
@@ -236,7 +216,8 @@
     width: 48px;
     height: 48px;
   }
-  .feedback-text{
+
+  .feedback-text {
     max-width: 518px;
   }
 
@@ -275,8 +256,7 @@
     height: 47px;
   }
 
-.feedback-text{
+  .feedback-text {
     max-width: 866px;
   }
-  
 }
