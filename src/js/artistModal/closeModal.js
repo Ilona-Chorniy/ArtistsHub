@@ -3,6 +3,8 @@ import { domRefs } from './domRefs.js';
 function closeModal() {
   domRefs.modal.classList.add('modal--hidden');
   document.body.classList.remove('no-scroll');
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
 }
 
 function initCloseModalListeners() {
@@ -20,14 +22,16 @@ function initCloseModalListeners() {
     });
   }
 
-  document.addEventListener('keydown', event => {
-    if (
-      event.key === 'Escape' &&
-      !domRefs.modal.classList.contains('modal--hidden')
-    ) {
-      closeModal();
-    }
-  });
+  document.removeEventListener('keydown', handleEscDownModal);
 }
 
-export { closeModal, initCloseModalListeners };
+function handleEscDownModal(e) {
+  if (
+    e.key === 'Escape' &&
+    !domRefs.modal.classList.contains('modal--hidden')
+  ) {
+    closeModal();
+  }
+}
+
+export { closeModal, initCloseModalListeners, handleEscDownModal };

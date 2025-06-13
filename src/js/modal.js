@@ -3,6 +3,7 @@ import { domRefs } from './artistModal/domRefs.js';
 import {
   closeModal,
   initCloseModalListeners,
+  handleEscDownModal,
 } from './artistModal/closeModal.js';
 import { fetchArtistData } from './artistModal/fetchArtistData.js';
 import { renderArtistInfo } from './artistModal/renderArtistInfo.js';
@@ -10,19 +11,30 @@ import { renderAlbums } from './artistModal/renderAlbums.js';
 import { renderGenres } from './artistModal/renderGenres.js';
 import loader from './artistModal/utils/loader.js';
 
+let loaderTimerId = null;
+// час затримки для лоадера (в мілісекундах)
+const LOADER_DELAY_MS = 300;
+
 // Function to open the modal and fetch artist data
 export async function openModal(artistId) {
   //  Show the loader
-  loader.showArtistLoader();
 
   try {
     // Show the modal
     domRefs.modal.classList.remove('modal--hidden');
-    document.body.classList.add('no-scroll');
+    // document.body.classList.add('no-scroll');
+    document.addEventListener('keydown', handleEscDownModal);
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    // Show the loader after a delay
+    document.body.loaderTimerId = setTimeout(() => {
+      loader.showArtistLoader();
+    }, LOADER_DELAY_MS);
 
     // Get artist data
     const artistData = await fetchArtistData(artistId);
-
+    loader.showArtistLoader();
     // Clear old content
     clearModalContent();
 
@@ -39,6 +51,10 @@ export async function openModal(artistId) {
     alert('Artist data not found');
     closeModal();
   } finally {
+    if (loaderTimerId) {
+      clearTimeout(loaderTimerId);
+      loaderTimerId = null;
+    }
     // Hide the loader
     loader.hideArtistLoader();
   }

@@ -25,12 +25,8 @@ async function loadFeedbacks() {
       return [];
     }
 
-    const middleIndex = Math.floor(all.length / 2);
-    const selected = [all[0], all[middleIndex], all[all.length - 1]];
-
-    renderFeedbacks(selected);
-
-    return selected;
+    renderFeedbacks(all);
+    return all;
   } catch (err) {
     console.error('Помилка при завантаженні відгуків:', err);
     document.getElementById('feedback-container').innerHTML =
@@ -66,7 +62,12 @@ function initSwiper() {
     pagination: {
       el: '.custom-pagination',
       clickable: true,
-      renderBullet: (i, cls) => `<span class="${cls}"></span>`,
+      renderBullet: (i, cls) => {
+        if (i < 3) {
+          return `<span class="${cls}"></span>`;
+        }
+        return '';
+      },
     },
     navigation: {
       prevEl: '.swiper-button-prev',
