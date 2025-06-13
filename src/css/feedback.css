@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* gap: 80px; */
 }
 
 .swiper-wrapper {
@@ -173,7 +174,7 @@
   height: 47px;
   background-color: #764191;
   border: none;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   cursor: pointer;
 }
 
@@ -255,5 +256,11 @@
     padding: 10px 24px;
     width: 177px;
     height: 47px;
+  }
+
+  .feedback-swiper .custom-pagination {
+    position: static !important;
+    margin-top: 80px !important;
+    margin-bottom: 80px;
   }
 }
