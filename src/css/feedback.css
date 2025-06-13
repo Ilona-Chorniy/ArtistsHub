@@ -236,6 +236,9 @@
     width: 48px;
     height: 48px;
   }
+  .feedback-text{
+    max-width: 518px;
+  }
 
   .swiper-button-prev .arrow,
   .swiper-button-next .arrow {
@@ -271,4 +274,9 @@
     width: 177px;
     height: 47px;
   }
+
+.feedback-text{
+    max-width: 866px;
+  }
+  
 }
