@@ -18,7 +18,7 @@
     <script type="module" crossorigin src="/ArtistsHub/index.js"></script>
     <link rel="modulepreload" crossorigin href="/ArtistsHub/assets/vendor-Breb73Hu.js">
     <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/vendor-BZ_WhpHG.css">
-    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/index-SaWq1pTn.css">
+    <link rel="stylesheet" crossorigin href="/ArtistsHub/assets/index-DNuS98fX.css">
   </head>
   <body>
     <header class="header">
@@ -194,7 +194,12 @@
   </div>
 </div>
 
-      <div
+      <div id="globalLoader" class="global-loader hidden">
+  <div id="artistDataLoader" class="loader-hidden">
+    <div class="spinner"></div>
+  </div>
+</div>
+<div
   class="modal modal--hidden open-artist-modal"
   id="artistModal"
   role="dialog"
@@ -209,19 +214,11 @@
       title="Close the window"
     ></button>
 
-    <div id="artistDataLoader" class="loader-hidden">
-      <div class="spinner"></div>
-    </div>
-
     <section class="artist-card">
       <h2 id="artistModalTitle" class="artist-name"></h2>
       <div class="artist-container">
         <div class="artist-card__header">
-          <img
-            src="data:image/svg+xml,%3csvg%20aria-hidden='true'%20style='position:%20absolute;%20width:%200;%20height:%200;%20overflow:%20hidden;'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3csymbol%20id='icon-icon-caret-right'%20viewBox='0%200%2017%2032'%3e%3cpath%20d='M0%2030.444l17.067-14.933-17.067-14.933v29.867z'%3e%3c/path%3e%3c/symbol%3e%3csymbol%20id='icon-down-arrow-alt'%20viewBox='0%200%2031%2032'%3e%3cpath%20d='M23.945%2017.409l-1.81-1.81-5.495%205.495v-12.27h-2.56v12.27l-5.495-5.495-1.81%201.81%208.585%208.585%208.585-8.585z'%3e%3c/path%3e%3c/symbol%3e%3c/defs%3e%3c/svg%3e"
-            alt="Artist photo"
-            class="artist-thumb"
-          />
+          <img src="data:image/svg+xml,%3csvg%20aria-hidden='true'%20style='position:%20absolute;%20width:%200;%20height:%200;%20overflow:%20hidden;'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3csymbol%20id='icon-icon-caret-right'%20viewBox='0%200%2017%2032'%3e%3cpath%20d='M0%2030.444l17.067-14.933-17.067-14.933v29.867z'%3e%3c/path%3e%3c/symbol%3e%3csymbol%20id='icon-down-arrow-alt'%20viewBox='0%200%2031%2032'%3e%3cpath%20d='M23.945%2017.409l-1.81-1.81-5.495%205.495v-12.27h-2.56v12.27l-5.495-5.495-1.81%201.81%208.585%208.585%208.585-8.585z'%3e%3c/path%3e%3c/symbol%3e%3c/defs%3e%3c/svg%3e" alt="Artist photo" class="artist-thumb" />
         </div>
         <ul class="artist-card__info-list">
           <li class="info-item artist-card__info-years-active">
