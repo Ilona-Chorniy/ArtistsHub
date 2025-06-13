@@ -1,3 +1,8 @@
+<div id="globalLoader" class="global-loader hidden">
+  <div id="artistDataLoader" class="loader-hidden">
+    <div class="spinner"></div>
+  </div>
+</div>
 <div
   class="modal modal--hidden open-artist-modal"
   id="artistModal"
@@ -13,19 +18,11 @@
       title="Close the window"
     ></button>
 
-    <div id="artistDataLoader" class="loader-hidden">
-      <div class="spinner"></div>
-    </div>
-
     <section class="artist-card">
       <h2 id="artistModalTitle" class="artist-name"></h2>
       <div class="artist-container">
         <div class="artist-card__header">
-          <img
-            src="/img/artists.svg"
-            alt="Artist photo"
-            class="artist-thumb"
-          />
+          <img src="/img/artists.svg" alt="Artist photo" class="artist-thumb" />
         </div>
         <ul class="artist-card__info-list">
           <li class="info-item artist-card__info-years-active">
