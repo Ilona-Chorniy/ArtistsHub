@@ -46,6 +46,9 @@
   background-color: #060307;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 608px;
   width: 100%;
   margin-bottom: 16px;
@@ -137,9 +140,14 @@
 }
 
 /* === Pagination === */
-/* .swiper-pagination .custom-pagination {
-  margin-bottom: 16px;
-} */
+.feedback-swiper .custom-pagination {
+  position: static !important;
+  margin-top: 16px !important;
+}
+
+.feedback-swiper {
+  padding-bottom: 0;
+}
 
 .feedback-swiper .swiper-pagination-bullet {
   width: 12px;
